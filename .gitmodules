@@ -1,0 +1,3 @@
+[submodule "huggingmolecules"]
+	path = huggingmolecules
+	url = https://github.com/gmum/huggingmolecules.git
