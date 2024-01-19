@@ -1,3 +1,6 @@
 [submodule "huggingmolecules"]
 	path = huggingmolecules
 	url = https://github.com/gmum/huggingmolecules.git
+[submodule "MAT"]
+	path = MAT
+	url = https://github.com/ardigen/MAT.git

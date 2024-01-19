@@ -3,6 +3,11 @@ from ogb.graphproppred import PygGraphPropPredDataset
 import logging
 import time
 from models import *
+from typing import Iterator, Callable, Tuple
+from tqdm import tqdm
+import deepchem as dc
+from rdkit import Chem
+from itertools import chain
 
 logger = logging.getLogger("molecules")
 
@@ -49,27 +54,40 @@ def featurize_with(featurizer):
     return inner
 
 
-def get_huggingmolecules_processors():
-    return map(lambda g: g(), sum([
-        [
-            (lambda: (config, StrippedMatModel.from_pretrained(config), MatFeaturizer.from_pretrained(config)))
-            for config in ["mat_masking_200k", "mat_masking_2M", "mat_masking_20M"]
-        ],
-        [
-            (lambda: (config, StrippedGroverModel.from_pretrained(config), GroverFeaturizer.from_pretrained(config)))
-            for config in ["grover_base", "grover_large"]
-        ],
-        [
-            (lambda: (config, StrippedRMatModel.from_pretrained(config), RMatFeaturizer.from_pretrained(config)))
-            for config in ["rmat_4M", "rmat_4M_rdkit"]
-        ],
-    ], []))
-
 def process(df, model, featurizer):
     with torch.no_grad():
         tqdm.pandas()
         df["features"] = df.smiles.progress_map(featurize_with(featurizer))
         df["embeddings"] = df.features.dropna().progress_map(lambda f: model(f)[0])
+
+
+def get_huggingmolecules_embedders() -> Iterator[Tuple[str, Callable[[pd.DataFrame], pd.DataFrame]]]:
+    for config in ["mat_masking_200k", "mat_masking_2M", "mat_masking_20M"]:
+        yield (config, lambda df: process(df, StrippedMatModel.from_pretrained(config), MatFeaturizer.from_pretrained(config)))
+
+    for config in ["grover_base", "grover_large"]:
+        yield (config, lambda df: precess(df, StrippedGroverModel.from_pretrained(config), GroverFeaturizer.from_pretrained(config)))
+
+    for config in ["rmat_4M", "rmat_4M_rdkit"]:
+        yield (config, lambda df: process(df, StrippedRMatModel.from_pretrained(config), RMatFeaturizer.from_pretrained(config)))
+
+
+def get_deepchem_embedders() -> Iterator[Tuple[str, Callable[[pd.DataFrame], pd.DataFrame]]]:
+    model = dc.feat.Mol2VecFingerprint()
+
+    def process(smiles):
+        with torch.no_grad():
+            tqdm.pandas()
+            smiles["embeddings"] = smiles.smiles.progress_map(lambda f: model(f)[0])
+            
+    yield ("mol2vec", process)
+
+
+def get_embedders() -> Iterator[Tuple[str, Callable[[pd.DataFrame], pd.DataFrame]]]:
+    return chain(
+        get_deepchem_embedders(),
+        get_huggingmolecules_embedders(),
+    )
 
 
 if __name__ == "__main__":
