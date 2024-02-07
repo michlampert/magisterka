@@ -1,5 +1,3 @@
-# Decision Tree models
-
 # OGB regression
 
 ## ogbg-molesol (1128 rows)
