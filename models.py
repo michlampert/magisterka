@@ -10,6 +10,7 @@ class StrippedMatModel(MatModel):
         super().__init__(config)
         self.generator.proj = torch.nn.Identity()
 
+
 class StrippedGroverModel(GroverModel):
     def __init__(self, config: GroverConfig):
         super(StrippedGroverModel, self).__init__(config)
@@ -19,6 +20,7 @@ class StrippedGroverModel(GroverModel):
     def forward(self, batch: GroverBatchEncoding):
         atom_ffn_output, bond_ffn_output = super().forward(batch)
         return torch.cat([atom_ffn_output, bond_ffn_output], 1)
+
 
 class StrippedRMatModel(RMatModel):
     def __init__(self, config: RMatConfig):

@@ -5,4 +5,4 @@ dataset
 embeddings
 venv
 logs*
-models
+models/
