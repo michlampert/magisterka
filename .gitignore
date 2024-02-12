@@ -6,3 +6,4 @@ embeddings
 venv
 logs*
 models/
+tmp*
