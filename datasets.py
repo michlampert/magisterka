@@ -9,6 +9,7 @@ import deepchem as dc
 from rdkit import Chem
 from itertools import chain
 from tdc.single_pred import ADME
+from tdc.benchmark_group import admet_group
 
 
 def load_ogb_dataset(name: str):
@@ -24,62 +25,93 @@ def load_tdc_dataset(module, name: str):
 
     train, valid, test = split["train"], split["valid"], split["test"]
 
-    train_range = list(range(0, len(train)))
-    train.index = train_range
-    valid_range = list(range(len(train), len(train) + len(valid)))
-    valid.index = valid_range
-    test_range = list(range(len(train) + len(valid), len(train) + len(valid) + len(test)))
-    test.index = test_range
-
+    dataset = pd.concat([train, valid, test]).reset_index(drop=True)
+    
+    # train_range = list(range(0, len(train)))
+    # train.index = train_range
+    # valid_range = list(range(len(train), len(train) + len(valid)))
+    # valid.index = valid_range
+    # test_range = list(range(len(train) + len(valid), len(train) + len(valid) + len(test)))
+    # test.index = test_range
+    
+    group = admet_group(path = 'data/')
+    benchmark = group.get(name)
+    
     return (
-        pd.concat([train, valid, test]).rename(columns={"Drug": "smiles"}).drop(["Drug_ID"], axis=1, errors='ignore'),
-        {"train": train_range, "valid": valid_range, "test": test_range}
+        dataset.rename(columns={"Drug": "smiles"}).drop(["Drug_ID"], axis=1, errors='ignore'),
+        {
+            "train": list(benchmark["train_val"].merge(dataset.reset_index().groupby(["Drug_ID", "Drug"]).first(), on=["Drug_ID", "Drug"])["index"]),
+            "valid": [],
+            "test": list(benchmark["test"].merge(dataset.reset_index().groupby(["Drug_ID", "Drug"]).first(), on=["Drug_ID", "Drug"])["index"])}
     )
 
-def get_ogb_names():
+
+def get_ogb_regression_names():
     return [
-        "ogbg-molbace",
-        "ogbg-moltox21",
-        "ogbg-molbbbp",
-        "ogbg-molclintox",
-        "ogbg-molmuv",
-        "ogbg-molsider",
-        "ogbg-moltoxcast",
         "ogbg-molesol",
         "ogbg-molfreesolv",
-        "ogbg-mollipo"
+        "ogbg-mollipo",
     ]
 
-def get_tdc_names():
+
+def get_ogb_classification_names():
+    return [
+        "ogbg-molbace",
+        "ogbg-molbbbp",
+        "ogbg-molclintox",
+        "ogbg-molsider",
+        "ogbg-moltox21",
+        "ogbg-moltoxcast",
+        "ogbg-molmuv",
+        "ogbg-molhiv",
+    ]
+
+
+def get_ogb_names():
+    return get_ogb_regression_names() + get_ogb_classification_names()
+
+
+def get_tdc_regression_names():
     return [
         'Caco2_Wang',
         'Half_Life_Obach',
-        'PAMPA_NCATS',
-        'HIA_Hou',
-        'Pgp_Broccatelli',
-        'Bioavailability_Ma',
         'Lipophilicity_AstraZeneca',
         'Solubility_AqSolDB',
         'HydrationFreeEnergy_FreeSolv',
-        'BBB_Martins',
         'PPBR_AZ',
         'VDss_Lombardo',
-        'CYP2C19_Veith',
-        'CYP2D6_Veith',
-        'CYP3A4_Veith',
-        'CYP1A2_Veith',
-        'CYP2C9_Veith',
-        'CYP2C9_Substrate_CarbonMangels',
-        'CYP2D6_Substrate_CarbonMangels',
-        'CYP3A4_Substrate_CarbonMangels',
         'Clearance_Hepatocyte_AZ',
     ]
+
+
+def get_tdc_classification_names():
+    return [
+        "PAMPA_NCATS",
+        "HIA_Hou",
+        "Pgp_Broccatelli",
+        "Bioavailability_Ma",
+        "BBB_Martins",
+        "CYP2C19_Veith",
+        "CYP2D6_Veith",
+        "CYP3A4_Veith",
+        "CYP1A2_Veith",
+        "CYP2C9_Veith",
+        "CYP2C9_Substrate_CarbonMangels",
+        "CYP2D6_Substrate_CarbonMangels",
+        "CYP3A4_Substrate_CarbonMangels",
+    ]
+
+
+def get_tdc_names():
+    return get_tdc_regression_names() + get_tdc_classification_names()
+
 
 def get_dataset_names() -> Iterator:
     return chain(
         get_ogb_names(),
         get_tdc_names(),
     )
+
 
 def get_dataset(name):
     if name in get_ogb_names():

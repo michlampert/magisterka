@@ -7,3 +7,5 @@ venv
 logs*
 models/
 tmp*
+results/
+results*.db

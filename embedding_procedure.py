@@ -59,12 +59,10 @@ def procedure(dataset_name, df, model_name, model, *, max_samples=None):
 
 
 @click.command()
-@click.option("--id", required=True, type=int)
+@click.option("--model_name", required=True, type=str)
+@click.option("--dataset_name", required=True, type=str)
 @click.option("--max_samples", default=None, type=int)
-def main(id, max_samples):
-    pairs = product(get_dataset_names(), get_embedder_names())
-
-    dataset_name, model_name = list(pairs)[id]
+def main(model_name, dataset_name, max_samples):
 
     df, _ = get_dataset(dataset_name)
 

@@ -1,878 +1,713 @@
-# Regression
-
-## ogbg-molesol (1128 rows)
-
-### Decision Tree regression
-
-|                  |       train |   valid |    test |   rows |
-|:-----------------|------------:|--------:|--------:|-------:|
-| mat_masking_200k | 5.13221e-17 | 1.54632 | 1.48653 |   1128 |
-| mat_masking_2M   | 7.84175e-18 | 1.45785 | 1.45768 |   1128 |
-| mat_masking_20M  | 5.17199e-17 | 1.52486 | 1.51343 |   1128 |
-| grover_base      | 3.20138e-18 | 2.21299 | 2.37327 |   1128 |
-| grover_large     | 0           | 2.54032 | 2.00635 |   1128 |
-| rmat_4M          | 0           | 1.65464 | 1.62287 |   1128 |
-| rmat_4M_rdkit    | 3.20138e-18 | 1.22993 | 1.25156 |   1128 |
-| mol2vec          | 0.0242687   | 1.84623 | 1.88578 |   1128 |
-
-![plot](plots/ogbg-molesol_res_tree.png)
-
-### Linear regression
-
-|                  |       train |     valid |      test |   rows |
-|:-----------------|------------:|----------:|----------:|-------:|
-| mat_masking_200k | 0.00698101  |  12.0835  |  16.3164  |   1128 |
-| mat_masking_2M   | 0.00669632  |  10.6559  |  10.608   |   1128 |
-| mat_masking_20M  | 0.0110913   |  11.0957  |  11.6254  |   1128 |
-| grover_base      | 4.84409e-05 |   2.16324 |   2.08121 |   1128 |
-| grover_large     | 2.9522e-05  |   1.9734  |   1.93066 |   1128 |
-| rmat_4M          | 0.000379213 | 273.401   | 332.63    |   1128 |
-| rmat_4M_rdkit    | 0.00145986  |   1.6469  |   1.66789 |   1128 |
-| mol2vec          | 0.498069    |   2.15405 |   2.2177  |   1128 |
-
-![plot](plots/ogbg-molesol_res_lin.png)
-
-## ogbg-molfreesolv (642 rows)
-
-### Decision Tree regression
-
-|                  |     train |   valid |    test |   rows |
-|:-----------------|----------:|--------:|--------:|-------:|
-| mat_masking_200k | 0         | 4.56609 | 3.50316 |    642 |
-| mat_masking_2M   | 0         | 5.17103 | 4.19943 |    642 |
-| mat_masking_20M  | 0         | 4.17068 | 3.38089 |    642 |
-| grover_base      | 0         | 5.42548 | 4.63254 |    642 |
-| grover_large     | 0         | 5.52991 | 4.47601 |    642 |
-| rmat_4M          | 0         | 4.85024 | 4.28943 |    642 |
-| rmat_4M_rdkit    | 0         | 3.92973 | 2.92358 |    642 |
-| mol2vec          | 0.0159983 | 6.42834 | 5.4461  |    642 |
-
-![plot](plots/ogbg-molfreesolv_res_tree.png)
-
-### Linear regression
-
-|                  |       train |      valid |       test |   rows |
-|:-----------------|------------:|-----------:|-----------:|-------:|
-| mat_masking_200k | 0.00221332  |   10.1227  |   10.9091  |    642 |
-| mat_masking_2M   | 0.00136263  |    7.71911 |   11.7169  |    642 |
-| mat_masking_20M  | 0.00130776  |    5.61877 |    8.7636  |    642 |
-| grover_base      | 2.89642e-05 |    5.01787 |    4.14707 |    642 |
-| grover_large     | 1.55214e-05 |    4.14497 |    3.55923 |    642 |
-| rmat_4M          | 1.53808e-05 |    3.43338 |    2.67121 |    642 |
-| rmat_4M_rdkit    | 1.09142e-05 |    3.79793 |    2.9608  |    642 |
-| mol2vec          | 0.33686     | 2735.08    | 4921.13    |    642 |
-
-![plot](plots/ogbg-molfreesolv_res_lin.png)
-
-## ogbg-mollipo (4200 rows)
-
-### Decision Tree regression
-
-|                  |       train |   valid |    test |   rows |
-|:-----------------|------------:|--------:|--------:|-------:|
-| mat_masking_200k | 2.39223e-17 | 1.31769 | 1.26591 |   4200 |
-| mat_masking_2M   | 2.98568e-17 | 1.35078 | 1.2943  |   4200 |
-| mat_masking_20M  | 2.73562e-17 | 1.32591 | 1.20573 |   4200 |
-| grover_base      | 1.32697e-17 | 1.656   | 1.61262 |   4200 |
-| grover_large     | 1.87662e-17 | 1.60446 | 1.59386 |   4200 |
-| rmat_4M          | 1.99218e-17 | 1.34156 | 1.29984 |   4200 |
-| rmat_4M_rdkit    | 3.52647e-17 | 1.20541 | 1.11601 |   4200 |
-| mol2vec          | 0.0251507   | 1.39515 | 1.32412 |   4200 |
-
-![plot](plots/ogbg-mollipo_res_tree.png)
-
-### Linear regression
-
-|                  |     train |    valid |     test |   rows |
-|:-----------------|----------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.459235  | 0.8869   | 0.922497 |   4200 |
-| mat_masking_2M   | 0.459562  | 0.852463 | 0.860197 |   4200 |
-| mat_masking_20M  | 0.458266  | 1.06974  | 0.911371 |   4200 |
-| grover_base      | 0.61604   | 1.25516  | 1.3509   |   4200 |
-| grover_large     | 0.425739  | 1.74478  | 1.66922  |   4200 |
-| rmat_4M          | 0.111604  | 2.35853  | 2.3288   |   4200 |
-| rmat_4M_rdkit    | 0.0637007 | 4.20537  | 3.92791  |   4200 |
-| mol2vec          | 0.703022  | 0.863039 | 0.917748 |   4200 |
-
-![plot](plots/ogbg-mollipo_res_lin.png)
-
-## Caco2_Wang (910 rows)
-
-### Decision Tree regression
-
-|                  |       train |    valid |     test |   rows |
-|:-----------------|------------:|---------:|---------:|-------:|
-| mat_masking_200k | 1.40764e-16 | 0.778543 | 0.634143 |    910 |
-| mat_masking_2M   | 0           | 0.638098 | 0.706476 |    910 |
-| mat_masking_20M  | 0           | 0.657553 | 0.603511 |    910 |
-| grover_base      | 0           | 0.837257 | 0.909947 |    910 |
-| grover_large     | 9.31064e-17 | 0.857676 | 1.04117  |    910 |
-| rmat_4M          | 0           | 0.600366 | 0.603583 |    910 |
-| rmat_4M_rdkit    | 0           | 0.671389 | 0.65066  |    910 |
-| mol2vec          | 0.0371996   | 0.65532  | 0.699054 |    910 |
-
-![plot](plots/Caco2_Wang_res_tree.png)
-
-### Linear regression
-
-|                  |       train |    valid |     test |   rows |
-|:-----------------|------------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.00324107  | 3.16599  | 3.44182  |    910 |
-| mat_masking_2M   | 0.00203481  | 5.94491  | 4.91463  |    910 |
-| mat_masking_20M  | 0.00216826  | 5.2437   | 5.76903  |    910 |
-| grover_base      | 1.66112e-05 | 1.03189  | 1.143    |    910 |
-| grover_large     | 3.65524e-06 | 0.822036 | 0.853789 |    910 |
-| rmat_4M          | 3.4816e-06  | 0.736399 | 0.785425 |    910 |
-| rmat_4M_rdkit    | 6.89645e-06 | 0.716403 | 0.684592 |    910 |
-| mol2vec          | 0.24222     | 0.497025 | 0.598275 |    910 |
-
-![plot](plots/Caco2_Wang_res_lin.png)
-
-## Half_Life_Obach (667 rows)
-
-### Decision Tree regression
-
-|                  |       train |    valid |    test |   rows |
-|:-----------------|------------:|---------:|--------:|-------:|
-| mat_masking_200k | 1.77968e-17 | 149.224  | 169.521 |    667 |
-| mat_masking_2M   | 0           |  34.8042 | 120.443 |    667 |
-| mat_masking_20M  | 0           |  99.0467 | 121.725 |    667 |
-| grover_base      | 0           |  26.6546 | 121.8   |    667 |
-| grover_large     | 7.95898e-17 |  32.6067 | 124.767 |    667 |
-| rmat_4M          | 3.40783e-17 |  24.3811 | 122.112 |    667 |
-| rmat_4M_rdkit    | 0           |  36.8771 | 148.083 |    667 |
-| mol2vec          | 0.130884    |  94.6479 | 132.754 |    667 |
-
-![plot](plots/Half_Life_Obach_res_tree.png)
-
-### Linear regression
-
-|                  |        train |    valid |    test |   rows |
-|:-----------------|-------------:|---------:|--------:|-------:|
-| mat_masking_200k |  0.0175462   |  87.829  | 127.672 |    667 |
-| mat_masking_2M   |  0.0134639   |  99.3079 | 136.957 |    667 |
-| mat_masking_20M  |  0.00750109  | 133.585  | 120.51  |    667 |
-| grover_base      |  0.000186672 | 115.916  | 159.655 |    667 |
-| grover_large     |  0.000728226 |  78.2146 | 142.407 |    667 |
-| rmat_4M          |  0.000382797 |  56.802  | 117.74  |    667 |
-| rmat_4M_rdkit    |  0.000309032 |  61.9382 | 121.16  |    667 |
-| mol2vec          | 26.0763      |  76.3669 | 115.743 |    667 |
-
-![plot](plots/Half_Life_Obach_res_lin.png)
-
-## Lipophilicity_AstraZeneca (4200 rows)
-
-### Decision Tree regression
-
-|                  |       train |   valid |    test |   rows |
-|:-----------------|------------:|--------:|--------:|-------:|
-| mat_masking_200k | 2.24299e-17 | 1.3383  | 1.22384 |   4200 |
-| mat_masking_2M   | 1.46225e-17 | 1.20595 | 1.17439 |   4200 |
-| mat_masking_20M  | 2.45707e-17 | 1.13195 | 1.22502 |   4200 |
-| grover_base      | 0           | 1.68001 | 1.60974 |   4200 |
-| grover_large     | 0           | 1.7011  | 1.66261 |   4200 |
-| rmat_4M          | 2.12789e-17 | 1.28292 | 1.28423 |   4200 |
-| rmat_4M_rdkit    | 3.54648e-17 | 1.01499 | 1.05963 |   4200 |
-| mol2vec          | 0.014182    | 1.2992  | 1.24199 |   4200 |
-
-![plot](plots/Lipophilicity_AstraZeneca_res_tree.png)
-
-### Linear regression
-
-|                  |      train |    valid |     test |   rows |
-|:-----------------|-----------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.463575   | 0.790448 | 0.804873 |   4200 |
-| mat_masking_2M   | 0.462312   | 0.730967 | 0.791404 |   4200 |
-| mat_masking_20M  | 0.457273   | 0.775786 | 0.834242 |   4200 |
-| grover_base      | 0.578362   | 1.23107  | 1.33247  |   4200 |
-| grover_large     | 0.717545   | 2.38503  | 2.38137  |   4200 |
-| rmat_4M          | 0.00476605 | 4.47002  | 5.10868  |   4200 |
-| rmat_4M_rdkit    | 0.00314055 | 3.91511  | 3.9027   |   4200 |
-| mol2vec          | 0.710925   | 0.772853 | 0.841598 |   4200 |
-
-![plot](plots/Lipophilicity_AstraZeneca_res_lin.png)
-
-## Solubility_AqSolDB (9982 rows)
-
-### Decision Tree regression
-
-|                  |    train |   valid |    test |   rows |
-|:-----------------|---------:|--------:|--------:|-------:|
-| mat_masking_200k | 0.176647 | 1.61619 | 1.63458 |   9982 |
-| mat_masking_2M   | 0.176647 | 1.70113 | 1.67364 |   9982 |
-| mat_masking_20M  | 0.176647 | 1.62407 | 1.70126 |   9982 |
-| grover_base      | 0        | 2.43347 | 2.45406 |   9982 |
-| grover_large     | 0        | 2.27657 | 2.31075 |   9982 |
-| rmat_4M          | 0.176647 | 1.7416  | 1.75658 |   9982 |
-| rmat_4M_rdkit    | 0        | 1.49934 | 1.4957  |   9982 |
-| mol2vec          | 0.21672  | 1.70132 | 1.68724 |   9982 |
-
-![plot](plots/Solubility_AqSolDB_res_tree.png)
-
-### Linear regression
-
-|                  |    train |   valid |    test |   rows |
-|:-----------------|---------:|--------:|--------:|-------:|
-| mat_masking_200k | 0.929414 | 1.16333 | 1.12537 |   9982 |
-| mat_masking_2M   | 0.927466 | 1.19943 | 1.14905 |   9982 |
-| mat_masking_20M  | 0.900469 | 1.38399 | 1.18259 |   9982 |
-| grover_base      | 1.18991  | 1.61112 | 1.60866 |   9982 |
-| grover_large     | 1.05956  | 1.70307 | 1.71578 |   9982 |
-| rmat_4M          | 0.654357 | 1.49029 | 1.37921 |   9982 |
-| rmat_4M_rdkit    | 0.635467 | 1.49413 | 1.41375 |   9982 |
-| mol2vec          | 1.44228  | 1.65839 | 1.56683 |   9982 |
-
-![plot](plots/Solubility_AqSolDB_res_lin.png)
-
-## HydrationFreeEnergy_FreeSolv (642 rows)
-
-### Decision Tree regression
-
-|                  |     train |   valid |    test |   rows |
-|:-----------------|----------:|--------:|--------:|-------:|
-| mat_masking_200k | 0         | 3.10277 | 1.9442  |    642 |
-| mat_masking_2M   | 0         | 2.55983 | 2.5338  |    642 |
-| mat_masking_20M  | 0         | 2.48372 | 2.86425 |    642 |
-| grover_base      | 0         | 3.88323 | 3.86093 |    642 |
-| grover_large     | 0         | 3.85468 | 3.75305 |    642 |
-| rmat_4M          | 0         | 2.7944  | 3.18467 |    642 |
-| rmat_4M_rdkit    | 0         | 2.66578 | 2.27463 |    642 |
-| mol2vec          | 0.0170294 | 3.6445  | 4.12928 |    642 |
-
-![plot](plots/HydrationFreeEnergy_FreeSolv_res_tree.png)
-
-### Linear regression
-
-|                  |       train |      valid |       test |   rows |
-|:-----------------|------------:|-----------:|-----------:|-------:|
-| mat_masking_200k | 0.00152747  |    4.16683 |    3.0768  |    642 |
-| mat_masking_2M   | 0.000776091 |    3.38771 |    2.18884 |    642 |
-| mat_masking_20M  | 0.000763723 |    3.1571  |    2.47737 |    642 |
-| grover_base      | 1.92782e-05 |    3.09214 |    3.23214 |    642 |
-| grover_large     | 1.00703e-05 |    3.09132 |    3.02298 |    642 |
-| rmat_4M          | 8.21e-06    |    1.15582 |    1.21309 |    642 |
-| rmat_4M_rdkit    | 9.39047e-06 |    1.18304 |    1.32111 |    642 |
-| mol2vec          | 0.341552    | 2549.26    | 2229.51    |    642 |
-
-![plot](plots/HydrationFreeEnergy_FreeSolv_res_lin.png)
-
-## PPBR_AZ (1614 rows)
-
-### Decision Tree regression
-
-|                  |      train |   valid |    test |   rows |
-|:-----------------|-----------:|--------:|--------:|-------:|
-| mat_masking_200k | 7.3222e-16 | 17.3974 | 17.359  |   1614 |
-| mat_masking_2M   | 0          | 16.713  | 18.7868 |   1614 |
-| mat_masking_20M  | 0          | 17.563  | 17.8301 |   1614 |
-| grover_base      | 0          | 19.7244 | 19.9645 |   1614 |
-| grover_large     | 7.3222e-16 | 23.6813 | 21.3328 |   1614 |
-| rmat_4M          | 0          | 18.5556 | 19.8879 |   1614 |
-| rmat_4M_rdkit    | 7.3222e-16 | 16.6972 | 20.3042 |   1614 |
-| mol2vec          | 0.971083   | 20.3527 | 18.3877 |   1614 |
-
-![plot](plots/PPBR_AZ_res_tree.png)
-
-### Linear regression
-
-|                  |        train |   valid |    test |   rows |
-|:-----------------|-------------:|--------:|--------:|-------:|
-| mat_masking_200k |  2.81156     | 64.2922 | 58.2916 |   1614 |
-| mat_masking_2M   |  2.48244     | 45.3105 | 59.5955 |   1614 |
-| mat_masking_20M  |  2.55316     | 46.6928 | 61.1722 |   1614 |
-| grover_base      |  0.00122059  | 33.8568 | 33.8315 |   1614 |
-| grover_large     |  0.000954165 | 21.6135 | 26.7795 |   1614 |
-| rmat_4M          |  0.00112266  | 20.1357 | 22.5002 |   1614 |
-| rmat_4M_rdkit    |  0.000400431 | 18.4232 | 21.1971 |   1614 |
-| mol2vec          | 10.7652      | 13.4531 | 16.1033 |   1614 |
-
-![plot](plots/PPBR_AZ_res_lin.png)
-
-## VDss_Lombardo (1130 rows)
-
-### Decision Tree regression
-
-|                  |       train |   valid |     test |   rows |
-|:-----------------|------------:|--------:|---------:|-------:|
-| mat_masking_200k | 1.52886e-17 | 68.5082 |  7.66427 |   1130 |
-| mat_masking_2M   | 1.38866e-17 | 66.9861 |  9.42919 |   1130 |
-| mat_masking_20M  | 0           | 67.5612 | 11.3786  |   1130 |
-| grover_base      | 1.70932e-18 | 67.9017 | 11.6259  |   1130 |
-| grover_large     | 4.06899e-18 | 68.0933 | 10.9411  |   1130 |
-| rmat_4M          | 3.82215e-18 | 67.9716 |  8.91518 |   1130 |
-| rmat_4M_rdkit    | 1.60044e-17 | 67.5756 | 10.3521  |   1130 |
-| mol2vec          | 0.21907     | 68.1458 | 12.7196  |   1130 |
-
-![plot](plots/VDss_Lombardo_res_tree.png)
-
-### Linear regression
-
-|                  |       train |   valid |     test |   rows |
-|:-----------------|------------:|--------:|---------:|-------:|
-| mat_masking_200k | 0.00771452  | 69.5233 | 28.0502  |   1130 |
-| mat_masking_2M   | 0.00871391  | 69.0686 | 25.3519  |   1130 |
-| mat_masking_20M  | 0.00900171  | 70.3631 | 28.4951  |   1130 |
-| grover_base      | 0.000149133 | 69.0026 | 13.5229  |   1130 |
-| grover_large     | 9.33037e-05 | 68.3825 | 10.7738  |   1130 |
-| rmat_4M          | 7.13645e-05 | 66.3349 |  9.1234  |   1130 |
-| rmat_4M_rdkit    | 0.000130577 | 66.0041 |  9.06808 |   1130 |
-| mol2vec          | 4.50638     | 66.8079 |  8.05579 |   1130 |
-
-![plot](plots/VDss_Lombardo_res_lin.png)
-
-## Clearance_Hepatocyte_AZ (1213 rows)
-
-### Decision Tree regression
-
-|                  |   train |   valid |    test |   rows |
-|:-----------------|--------:|--------:|--------:|-------:|
-| mat_masking_200k |   0     | 61.5095 | 61.588  |   1213 |
-| mat_masking_2M   |   0     | 66.8773 | 63.8678 |   1213 |
-| mat_masking_20M  |   0     | 63.909  | 63.6849 |   1213 |
-| grover_base      |   0     | 73.7521 | 71.4759 |   1213 |
-| grover_large     |   0     | 75.6393 | 68.455  |   1213 |
-| rmat_4M          |   0     | 74.3336 | 67.3644 |   1213 |
-| rmat_4M_rdkit    |   0     | 57.8932 | 61.446  |   1213 |
-| mol2vec          |  13.363 | 62.914  | 56.1467 |   1213 |
-
-![plot](plots/Clearance_Hepatocyte_AZ_res_tree.png)
-
-### Linear regression
-
-|                  |       train |       valid |        test |   rows |
-|:-----------------|------------:|------------:|------------:|-------:|
-| mat_masking_200k |  2.39345    |   5828.22   |   8045.45   |   1213 |
-| mat_masking_2M   |  2.29839    |   9365.55   |   9543.28   |   1213 |
-| mat_masking_20M  |  2.45513    |  10647.8    |  23780      |   1213 |
-| grover_base      |  0.00071379 |     89.7115 |     79.5442 |   1213 |
-| grover_large     |  0.00169099 |     73.103  |     72.7126 |   1213 |
-| rmat_4M          |  3.02826    | 135050      | 179092      |   1213 |
-| rmat_4M_rdkit    |  2.27082    | 120154      | 144282      |   1213 |
-| mol2vec          | 32.7047     |     47.6701 |     51.7439 |   1213 |
-
-![plot](plots/Clearance_Hepatocyte_AZ_res_lin.png)
-
-# Multi-label classification
-
-## ogbg-molbace (1513 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 1        | 0.486395 | 0.569869 |   1513 |
-| mat_masking_2M   | 1        | 0.476018 | 0.666374 |   1513 |
-| mat_masking_20M  | 1        | 0.467059 | 0.581676 |   1513 |
-| grover_base      | 1        | 0.321025 | 0.51618  |   1513 |
-| grover_large     | 1        | 0.348458 | 0.444966 |   1513 |
-| rmat_4M          | 1        | 0.462214 | 0.531447 |   1513 |
-| rmat_4M_rdkit    | 1        | 0.456182 | 0.590972 |   1513 |
-| mol2vec          | 0.993074 | 0.462214 | 0.577778 |   1513 |
-
-![plot](plots/ogbg-molbace_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.831908 | 0.496056 | 0.587394 |   1513 |
-| mat_masking_2M   | 0.830118 | 0.491683 | 0.581267 |   1513 |
-| mat_masking_20M  | 0.820305 | 0.525157 | 0.598323 |   1513 |
-| grover_base      | 0.914895 | 0.422266 | 0.515651 |   1513 |
-| grover_large     | 0.962944 | 0.431249 | 0.55814  |   1513 |
-| rmat_4M          | 0.974991 | 0.613181 | 0.617703 |   1513 |
-| rmat_4M_rdkit    | 0.982734 | 0.533369 | 0.627451 |   1513 |
-| mol2vec          | 0.863599 | 0.465514 | 0.55942  |   1513 |
-
-![plot](plots/ogbg-molbace_res_lin.png)
-
-## ogbg-molbbbp (2039 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 1        | 0.759104 | 0.533472 |   2039 |
-| mat_masking_2M   | 1        | 0.74352  | 0.547581 |   2039 |
-| mat_masking_20M  | 1        | 0.690276 | 0.559771 |   2039 |
-| grover_base      | 1        | 0.631636 | 0.467164 |   2039 |
-| grover_large     | 1        | 0.614764 | 0.461532 |   2039 |
-| rmat_4M          | 1        | 0.821817 | 0.566177 |   2039 |
-| rmat_4M_rdkit    | 1        | 0.777869 | 0.621198 |   2039 |
-| mol2vec          | 0.998865 | 0.769159 | 0.503268 |   2039 |
-
-![plot](plots/ogbg-molbbbp_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.862818 | 0.88041  | 0.588837 |   2039 |
-| mat_masking_2M   | 0.878793 | 0.880969 | 0.553186 |   2039 |
-| mat_masking_20M  | 0.825944 | 0.895733 | 0.518437 |   2039 |
-| grover_base      | 0.986187 | 0.676471 | 0.521535 |   2039 |
-| grover_large     | 0.997719 | 0.686244 | 0.529508 |   2039 |
-| rmat_4M          | 0.993137 | 0.860479 | 0.597386 |   2039 |
-| rmat_4M_rdkit    | 0.991955 | 0.850513 | 0.60364  |   2039 |
-| mol2vec          | 0.904577 | 0.793622 | 0.535529 |   2039 |
-
-![plot](plots/ogbg-molbbbp_res_lin.png)
-
-## ogbg-molclintox (1477 rows, 2 labels)
-
-### Decision Tree classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 1        | 0.498575 | 0.499891 |   1477 |
-| mat_masking_2M   | 1        | 0.622844 | 0.53022  |   1477 |
-| mat_masking_20M  | 1        | 0.527809 | 0.495273 |   1477 |
-| grover_base      | 1        | 0.469534 | 0.461818 |   1477 |
-| grover_large     | 1        | 0.532424 | 0.507238 |   1477 |
-| rmat_4M          | 1        | 0.598212 | 0.461818 |   1477 |
-| rmat_4M_rdkit    | 1        | 0.523855 | 0.560967 |   1477 |
-| mol2vec          | 0.997155 | 0.514989 | 0.516678 |   1477 |
-
-![plot](plots/ogbg-molclintox_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.726896 | 0.715278 | 0.692541 |   1477 |
-| mat_masking_2M   | 0.785726 | 0.616349 | 0.733755 |   1477 |
-| mat_masking_20M  | 0.690613 | 0.616349 | 0.692541 |   1477 |
-| grover_base      | 1        | 0.551994 | 0.530688 |   1477 |
-| grover_large     | 1        | 0.626956 | 0.564392 |   1477 |
-| rmat_4M          | 0.982909 | 0.739437 | 0.785714 |   1477 |
-| rmat_4M_rdkit    | 0.985865 | 0.824561 | 0.746584 |   1477 |
-| mol2vec          | 0.902282 | 0.557488 | 0.64916  |   1477 |
-
-![plot](plots/ogbg-molclintox_res_lin.png)
-
-## ogbg-molsider (1427 rows, 27 labels)
-
-### Decision Tree classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.996201 | 0.612248 | 0.560309 |   1427 |
-| mat_masking_2M   | 0.996201 | 0.622579 | 0.604892 |   1427 |
-| mat_masking_20M  | 0.996201 | 0.651167 | 0.589698 |   1427 |
-| grover_base      | 1        | 0.609638 | 0.582963 |   1427 |
-| grover_large     | 1        | 0.606707 | 0.583365 |   1427 |
-| rmat_4M          | 0.996201 | 0.608384 | 0.608428 |   1427 |
-| rmat_4M_rdkit    | 1        | 0.611294 | 0.575348 |   1427 |
-| mol2vec          | 0.996875 | 0.617066 | 0.61666  |   1427 |
-
-![plot](plots/ogbg-molsider_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.711525 | 0.669009 | 0.633568 |   1427 |
-| mat_masking_2M   | 0.726685 | 0.675137 | 0.642338 |   1427 |
-| mat_masking_20M  | 0.691487 | 0.680637 | 0.652373 |   1427 |
-| grover_base      | 0.947307 | 0.603832 | 0.600077 |   1427 |
-| grover_large     | 0.987174 | 0.616433 | 0.605663 |   1427 |
-| rmat_4M          | 0.989147 | 0.649001 | 0.620353 |   1427 |
-| rmat_4M_rdkit    | 0.990047 | 0.640349 | 0.613989 |   1427 |
-| mol2vec          | 0.779664 | 0.663695 | 0.638316 |   1427 |
-
-![plot](plots/ogbg-molsider_res_lin.png)
-
-## ogbg-moltox21 (7831 rows, 12 labels)
-
-### Decision Tree classification
-
-|                  |    train |     valid |      test |   rows |
-|:-----------------|---------:|----------:|----------:|-------:|
-| mat_masking_200k | 0.999166 | 0.155188  | 0.0564739 |   3079 |
-| mat_masking_2M   | 0.999166 | 0.112645  | 0.0830591 |   3079 |
-| mat_masking_20M  | 0.999166 | 0.145144  | 0.0985168 |   3079 |
-| grover_base      | 1        | 0.0847706 | 0.0824444 |   3079 |
-| grover_large     | 1        | 0.0755463 | 0.0480028 |   3079 |
-| rmat_4M          | 0.999166 | 0.123729  | 0.0792256 |   3079 |
-| rmat_4M_rdkit    | 1        | 0.0936586 | 0.0388397 |   3079 |
-| mol2vec          | 0.994064 | 0.175939  | 0.124192  |   3079 |
-
-![plot](plots/ogbg-moltox21_res_tree.png)
-
-### Linear classification
-
-|                  |    train |     valid |      test |   rows |
-|:-----------------|---------:|----------:|----------:|-------:|
-| mat_masking_200k | 0.214422 | 0.219391  | 0.0944114 |   3079 |
-| mat_masking_2M   | 0.273599 | 0.223801  | 0.0796296 |   3079 |
-| mat_masking_20M  | 0.161457 | 0.104763  | 0.134028  |   3079 |
-| grover_base      | 0.941091 | 0.0376608 | 0.0708693 |   3079 |
-| grover_large     | 0.978966 | 0.0944756 | 0.0334561 |   3079 |
-| rmat_4M          | 0.982175 | 0.249606  | 0.0769751 |   3079 |
-| rmat_4M_rdkit    | 0.981137 | 0.216455  | 0.189632  |   3079 |
-| mol2vec          | 0.72017  | 0.169468  | 0.136837  |   3079 |
-
-![plot](plots/ogbg-moltox21_res_lin.png)
-
-*Problem with data*
-
-cannot unpack non-iterable NoneType object
-
-## PAMPA_NCATS (2034 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.607147 | 0.554657 |   2034 |
-| mat_masking_2M   |       1 | 0.596048 | 0.615703 |   2034 |
-| mat_masking_20M  |       1 | 0.517727 | 0.580136 |   2034 |
-| grover_base      |       1 | 0.477961 | 0.55284  |   2034 |
-| grover_large     |       1 | 0.520894 | 0.504432 |   2034 |
-| rmat_4M          |       1 | 0.583868 | 0.579227 |   2034 |
-| rmat_4M_rdkit    |       1 | 0.601961 | 0.624416 |   2034 |
-| mol2vec          |       1 | 0.589687 | 0.580863 |   2034 |
-
-![plot](plots/PAMPA_NCATS_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.622639 | 0.542793 | 0.593163 |   2034 |
-| mat_masking_2M   | 0.679532 | 0.579485 | 0.581847 |   2034 |
-| mat_masking_20M  | 0.57888  | 0.512312 | 0.602982 |   2034 |
-| grover_base      | 0.905995 | 0.604514 | 0.525975 |   2034 |
-| grover_large     | 0.963064 | 0.583868 | 0.549834 |   2034 |
-| rmat_4M          | 0.997067 | 0.681682 | 0.695557 |   2034 |
-| rmat_4M_rdkit    | 0.992652 | 0.656239 | 0.658186 |   2034 |
-| mol2vec          | 0.760397 | 0.570628 | 0.580264 |   2034 |
-
-![plot](plots/PAMPA_NCATS_res_lin.png)
-
-## HIA_Hou (578 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.696789 | 0.7825   |    578 |
-| mat_masking_2M   |       1 | 0.781132 | 0.835601 |    578 |
-| mat_masking_20M  |       1 | 0.578401 | 0.68984  |    578 |
-| grover_base      |       1 | 0.655446 | 0.540799 |    578 |
-| grover_large     |       1 | 0.436893 | 0.565    |    578 |
-| rmat_4M          |       1 | 0.781132 | 0.770367 |    578 |
-| rmat_4M_rdkit    |       1 | 0.814103 | 0.770297 |    578 |
-| mol2vec          |       1 | 0.71     | 0.758764 |    578 |
-
-![plot](plots/HIA_Hou_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.960396 | 0.890566 | 0.855    |    578 |
-| mat_masking_2M   | 0.978283 | 0.849351 | 0.876351 |    578 |
-| mat_masking_20M  | 0.925176 | 0.890566 | 0.876351 |    578 |
-| grover_base      | 1        | 0.781132 | 0.704433 |    578 |
-| grover_large     | 1        | 0.597222 | 0.720751 |    578 |
-| rmat_4M          | 1        | 0.849351 | 0.93424  |    578 |
-| rmat_4M_rdkit    | 1        | 0.849351 | 0.93424  |    578 |
-| mol2vec          | 1        | 0.781132 | 0.882234 |    578 |
-
-![plot](plots/HIA_Hou_res_lin.png)
-
-## Pgp_Broccatelli (1218 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.786369 | 0.786656 |   1218 |
-| mat_masking_2M   |       1 | 0.818452 | 0.811018 |   1218 |
-| mat_masking_20M  |       1 | 0.818452 | 0.774404 |   1218 |
-| grover_base      |       1 | 0.61033  | 0.638153 |   1218 |
-| grover_large     |       1 | 0.637787 | 0.602452 |   1218 |
-| rmat_4M          |       1 | 0.777958 | 0.733387 |   1218 |
-| rmat_4M_rdkit    |       1 | 0.818893 | 0.799177 |   1218 |
-| mol2vec          |       1 | 0.810444 | 0.811425 |   1218 |
-
-![plot](plots/Pgp_Broccatelli_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.924109 | 0.851822 | 0.843885 |   1218 |
-| mat_masking_2M   | 0.937333 | 0.859514 | 0.848297 |   1218 |
-| mat_masking_20M  | 0.901407 | 0.843748 | 0.852211 |   1218 |
-| grover_base      | 0.998818 | 0.684368 | 0.671336 |   1218 |
-| grover_large     | 1        | 0.751696 | 0.720391 |   1218 |
-| rmat_4M          | 1        | 0.819235 | 0.848052 |   1218 |
-| rmat_4M_rdkit    | 1        | 0.810853 | 0.844095 |   1218 |
-| mol2vec          | 0.958616 | 0.784041 | 0.790191 |   1218 |
-
-![plot](plots/Pgp_Broccatelli_res_lin.png)
-
-## Bioavailability_Ma (640 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.589744 | 0.585564 |    640 |
-| mat_masking_2M   |       1 | 0.46908  | 0.599499 |    640 |
-| mat_masking_20M  |       1 | 0.662142 | 0.510476 |    640 |
-| grover_base      |       1 | 0.434014 | 0.5      |    640 |
-| grover_large     |       1 | 0.530463 | 0.545131 |    640 |
-| rmat_4M          |       1 | 0.530463 | 0.577286 |    640 |
-| mol2vec          |       1 | 0.553043 | 0.599499 |    640 |
-
-![plot](plots/Bioavailability_Ma_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.732586 | 0.571429 | 0.564103 |    640 |
-| mat_masking_2M   | 0.818519 | 0.626921 | 0.565611 |    640 |
-| mat_masking_20M  | 0.703704 | 0.547475 | 0.564103 |    640 |
-| grover_base      | 1        | 0.506003 | 0.515763 |    640 |
-| grover_large     | 1        | 0.458834 | 0.478058 |    640 |
-| rmat_4M          | 1        | 0.74359  | 0.621038 |    640 |
-| mol2vec          | 0.98349  | 0.527767 | 0.680745 |    640 |
-
-![plot](plots/Bioavailability_Ma_res_lin.png)
-
-## BBB_Martins (2030 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k | 1       | 0.759519 | 0.75704  |   2030 |
-| mat_masking_2M   | 1       | 0.681601 | 0.748291 |   2030 |
-| mat_masking_20M  | 1       | 0.761077 | 0.720854 |   2030 |
-| grover_base      | 1       | 0.646004 | 0.579106 |   2030 |
-| grover_large     | 1       | 0.578679 | 0.558828 |   2030 |
-| rmat_4M          | 1       | 0.663907 | 0.742635 |   2030 |
-| rmat_4M_rdkit    | 1       | 0.715614 | 0.75704  |   2030 |
-| mol2vec          | 0.99801 | 0.795715 | 0.730233 |   2030 |
-
-![plot](plots/BBB_Martins_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.863897 | 0.828692 | 0.753933 |   2030 |
-| mat_masking_2M   | 0.889219 | 0.800141 | 0.755981 |   2030 |
-| mat_masking_20M  | 0.835859 | 0.834509 | 0.778418 |   2030 |
-| grover_base      | 0.983973 | 0.667155 | 0.690832 |   2030 |
-| grover_large     | 0.993011 | 0.732969 | 0.699164 |   2030 |
-| rmat_4M          | 0.999002 | 0.849933 | 0.767256 |   2030 |
-| rmat_4M_rdkit    | 0.998001 | 0.817135 | 0.800745 |   2030 |
-| mol2vec          | 0.910063 | 0.791337 | 0.764451 |   2030 |
-
-![plot](plots/BBB_Martins_res_lin.png)
-
-## CYP2C19_Veith (12665 rows, 1 labels)
-
-### Decision Tree classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 1        | 0.590189 | 0.580937 |  12665 |
-| mol2vec     | 0.999318 | 0.669086 | 0.694008 |  12665 |
-
-![plot](plots/CYP2C19_Veith_res_tree.png)
-
-### Linear classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 0.800733 | 0.745454 | 0.725591 |  12665 |
-| mol2vec     | 0.805126 | 0.801276 | 0.781258 |  12665 |
-
-![plot](plots/CYP2C19_Veith_res_lin.png)
-
-## CYP2D6_Veith (13130 rows, 1 labels)
-
-### Decision Tree classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 1        | 0.541941 | 0.54325  |  13130 |
-| mol2vec     | 0.998947 | 0.641346 | 0.648286 |  13130 |
-
-![plot](plots/CYP2D6_Veith_res_tree.png)
-
-### Linear classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 0.725499 | 0.631413 | 0.650367 |  13130 |
-| mol2vec     | 0.73754  | 0.727318 | 0.714368 |  13130 |
-
-![plot](plots/CYP2D6_Veith_res_lin.png)
-
-## CYP3A4_Veith (12328 rows, 1 labels)
-
-### Decision Tree classification
-
-|              |    train |    valid |     test |   rows |
-|:-------------|---------:|---------:|---------:|-------:|
-| grover_base  | 1        | 0.550423 | 0.563894 |  12328 |
-| grover_large | 1        | 0.522749 | 0.566973 |  12328 |
-| mol2vec      | 0.999881 | 0.681232 | 0.686187 |  12328 |
-
-![plot](plots/CYP3A4_Veith_res_tree.png)
-
-### Linear classification
-
-|              |    train |    valid |     test |   rows |
-|:-------------|---------:|---------:|---------:|-------:|
-| grover_base  | 0.78276  | 0.689195 | 0.69461  |  12328 |
-| grover_large | 0.788637 | 0.694473 | 0.69909  |  12328 |
-| mol2vec      | 0.792093 | 0.764917 | 0.743988 |  12328 |
-
-![plot](plots/CYP3A4_Veith_res_lin.png)
-
-## CYP1A2_Veith (12579 rows, 1 labels)
-
-### Decision Tree classification
-
-|              |    train |    valid |     test |   rows |
-|:-------------|---------:|---------:|---------:|-------:|
-| grover_base  | 1        | 0.660264 | 0.643637 |  12579 |
-| grover_large | 1        | 0.664975 | 0.652347 |  12579 |
-| mol2vec      | 0.999886 | 0.739959 | 0.739279 |  12579 |
-
-![plot](plots/CYP1A2_Veith_res_tree.png)
-
-### Linear classification
-
-|              |    train |    valid |     test |   rows |
-|:-------------|---------:|---------:|---------:|-------:|
-| grover_base  | 0.834906 | 0.791388 | 0.778288 |  12579 |
-| grover_large | 0.857308 | 0.783769 | 0.785323 |  12579 |
-| mol2vec      | 0.834503 | 0.814673 | 0.822275 |  12579 |
-
-![plot](plots/CYP1A2_Veith_res_lin.png)
-
-## CYP2C9_Veith (12092 rows, 1 labels)
-
-### Decision Tree classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 1        | 0.563913 | 0.583548 |  12092 |
-| mol2vec     | 0.999201 | 0.7055   | 0.67728  |  12092 |
-
-![plot](plots/CYP2C9_Veith_res_tree.png)
-
-### Linear classification
-
-|             |    train |    valid |     test |   rows |
-|:------------|---------:|---------:|---------:|-------:|
-| grover_base | 0.784495 | 0.736445 | 0.695597 |  12092 |
-| mol2vec     | 0.775941 | 0.759973 | 0.746672 |  12092 |
-
-![plot](plots/CYP2C9_Veith_res_lin.png)
-
-## CYP2C9_Substrate_CarbonMangels (669 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.507353 | 0.582018 |    669 |
-| mat_masking_2M   |       1 | 0.581938 | 0.502387 |    669 |
-| mat_masking_20M  |       1 | 0.5822   | 0.441667 |    669 |
-| grover_base      |       1 | 0.485746 | 0.50609  |    669 |
-| grover_large     |       1 | 0.537931 | 0.531029 |    669 |
-| rmat_4M          |       1 | 0.618062 | 0.557756 |    669 |
-| rmat_4M_rdkit    |       1 | 0.593939 | 0.480003 |    669 |
-| mol2vec          |       1 | 0.51298  | 0.48367  |    669 |
-
-![plot](plots/CYP2C9_Substrate_CarbonMangels_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.731228 | 0.48367  | 0.496078 |    669 |
-| mat_masking_2M   | 0.742936 | 0.434495 | 0.500439 |    669 |
-| mat_masking_20M  | 0.613566 | 0.492424 | 0.507554 |    669 |
-| grover_base      | 1        | 0.493924 | 0.520911 |    669 |
-| grover_large     | 1        | 0.484615 | 0.517859 |    669 |
-| rmat_4M          | 1        | 0.618062 | 0.549038 |    669 |
-| rmat_4M_rdkit    | 1        | 0.589461 | 0.559363 |    669 |
-| mol2vec          | 0.94988  | 0.638814 | 0.486826 |    669 |
-
-![plot](plots/CYP2C9_Substrate_CarbonMangels_res_lin.png)
-
-## CYP2D6_Substrate_CarbonMangels (667 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 1        | 0.695455 | 0.59408  |    667 |
-| mat_masking_2M   | 1        | 0.757246 | 0.582418 |    667 |
-| mat_masking_20M  | 1        | 0.547908 | 0.606841 |    667 |
-| grover_base      | 1        | 0.537695 | 0.531954 |    667 |
-| grover_large     | 1        | 0.446019 | 0.619337 |    667 |
-| rmat_4M          | 1        | 0.735178 | 0.63184  |    667 |
-| rmat_4M_rdkit    | 1        | 0.602767 | 0.59408  |    667 |
-| mol2vec          | 0.997423 | 0.708919 | 0.529289 |    667 |
-
-![plot](plots/CYP2D6_Substrate_CarbonMangels_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.823818 | 0.682147 | 0.67626  |    667 |
-| mat_masking_2M   | 0.881462 | 0.653209 | 0.661857 |    667 |
-| mat_masking_20M  | 0.807555 | 0.692578 | 0.637906 |    667 |
-| grover_base      | 1        | 0.632612 | 0.556667 |    667 |
-| grover_large     | 1        | 0.547908 | 0.545061 |    667 |
-| rmat_4M          | 1        | 0.777409 | 0.657216 |    667 |
-| rmat_4M_rdkit    | 1        | 0.743164 | 0.63184  |    667 |
-| mol2vec          | 0.948352 | 0.630999 | 0.648886 |    667 |
-
-![plot](plots/CYP2D6_Substrate_CarbonMangels_res_lin.png)
-
-## CYP3A4_Substrate_CarbonMangels (670 rows, 1 labels)
-
-### Decision Tree classification
-
-|                  |   train |    valid |     test |   rows |
-|:-----------------|--------:|---------:|---------:|-------:|
-| mat_masking_200k |       1 | 0.623849 | 0.54353  |    670 |
-| mat_masking_2M   |       1 | 0.560904 | 0.603395 |    670 |
-| mat_masking_20M  |       1 | 0.685446 | 0.581996 |    670 |
-| grover_base      |       1 | 0.544011 | 0.495249 |    670 |
-| grover_large     |       1 | 0.460299 | 0.456757 |    670 |
-| rmat_4M          |       1 | 0.653941 | 0.54353  |    670 |
-| rmat_4M_rdkit    |       1 | 0.635209 | 0.552139 |    670 |
-| mol2vec          |       1 | 0.609767 | 0.535658 |    670 |
-
-![plot](plots/CYP3A4_Substrate_CarbonMangels_res_tree.png)
-
-### Linear classification
-
-|                  |    train |    valid |     test |   rows |
-|:-----------------|---------:|---------:|---------:|-------:|
-| mat_masking_200k | 0.79754  | 0.70702  | 0.613177 |    670 |
-| mat_masking_2M   | 0.808981 | 0.645339 | 0.598008 |    670 |
-| mat_masking_20M  | 0.750156 | 0.712316 | 0.63661  |    670 |
-| grover_base      | 1        | 0.470056 | 0.468699 |    670 |
-| grover_large     | 1        | 0.537313 | 0.574603 |    670 |
-| rmat_4M          | 1        | 0.696007 | 0.52068  |    670 |
-| rmat_4M_rdkit    | 1        | 0.698198 | 0.519713 |    670 |
-| mol2vec          | 0.884479 | 0.611161 | 0.559677 |    670 |
-
-![plot](plots/CYP3A4_Substrate_CarbonMangels_res_lin.png)
+### BBB_Martins (classification)
+
+| dataset     | base_model        | head_model   | metric   |   result |
+|:------------|:------------------|:-------------|:---------|---------:|
+| BBB_Martins | **SOTA**          | nan          | roc-auc  |    0.92  |
+| BBB_Martins | mat_masking_200k  | linear       | roc-auc  |    0.816 |
+| BBB_Martins | mol2vec           | linear       | roc-auc  |    0.807 |
+| BBB_Martins | mat_masking_2M    | linear       | roc-auc  |    0.784 |
+| BBB_Martins | rmat_4M_rdkit     | linear       | roc-auc  |    0.784 |
+| BBB_Martins | rmat_4M           | linear       | roc-auc  |    0.78  |
+| BBB_Martins | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.778 |
+| BBB_Martins | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.777 |
+| BBB_Martins | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.774 |
+| BBB_Martins | mat_masking_20M   | linear       | roc-auc  |    0.772 |
+| BBB_Martins | rmat_4M           | forest       | roc-auc  |    0.758 |
+| BBB_Martins | rmat_4M_rdkit     | forest       | roc-auc  |    0.754 |
+| BBB_Martins | ChemBERTa-5M-MTR  | forest       | roc-auc  |    0.752 |
+| BBB_Martins | mat_masking_200k  | forest       | roc-auc  |    0.751 |
+| BBB_Martins | mol2vec           | forest       | roc-auc  |    0.736 |
+| BBB_Martins | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.735 |
+| BBB_Martins | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.734 |
+| BBB_Martins | mat_masking_20M   | forest       | roc-auc  |    0.722 |
+| BBB_Martins | grover_base       | linear       | roc-auc  |    0.692 |
+| BBB_Martins | mat_masking_2M    | forest       | roc-auc  |    0.684 |
+| BBB_Martins | grover_large      | linear       | roc-auc  |    0.67  |
+| BBB_Martins | grover_large      | forest       | roc-auc  |    0.566 |
+| BBB_Martins | grover_base       | forest       | roc-auc  |    0.545 |
+
+### Bioavailability_Ma (classification)
+
+| dataset            | base_model        | head_model   | metric   |   result |
+|:-------------------|:------------------|:-------------|:---------|---------:|
+| Bioavailability_Ma | **SOTA**          | nan          | rocauc   |    0.748 |
+| Bioavailability_Ma | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.636 |
+| Bioavailability_Ma | rmat_4M           | linear       | roc-auc  |    0.627 |
+| Bioavailability_Ma | rmat_4M_rdkit     | forest       | roc-auc  |    0.619 |
+| Bioavailability_Ma | rmat_4M_rdkit     | linear       | roc-auc  |    0.616 |
+| Bioavailability_Ma | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.605 |
+| Bioavailability_Ma | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.605 |
+| Bioavailability_Ma | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.601 |
+| Bioavailability_Ma | mol2vec           | linear       | roc-auc  |    0.596 |
+| Bioavailability_Ma | mat_masking_2M    | linear       | roc-auc  |    0.593 |
+| Bioavailability_Ma | mol2vec           | forest       | roc-auc  |    0.583 |
+| Bioavailability_Ma | rmat_4M           | forest       | roc-auc  |    0.572 |
+| Bioavailability_Ma | ChemBERTa-5M-MTR  | forest       | roc-auc  |    0.552 |
+| Bioavailability_Ma | mat_masking_200k  | linear       | roc-auc  |    0.534 |
+| Bioavailability_Ma | mat_masking_20M   | linear       | roc-auc  |    0.508 |
+| Bioavailability_Ma | mat_masking_2M    | forest       | roc-auc  |    0.508 |
+| Bioavailability_Ma | grover_large      | linear       | roc-auc  |    0.499 |
+| Bioavailability_Ma | mat_masking_200k  | forest       | roc-auc  |    0.496 |
+| Bioavailability_Ma | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.483 |
+| Bioavailability_Ma | mat_masking_20M   | forest       | roc-auc  |    0.476 |
+| Bioavailability_Ma | grover_large      | forest       | roc-auc  |    0.465 |
+| Bioavailability_Ma | grover_base       | forest       | roc-auc  |    0.454 |
+| Bioavailability_Ma | grover_base       | linear       | roc-auc  |    0.408 |
+
+### CYP2C9_Substrate_CarbonMangels (classification)
+
+| dataset                        | base_model        | head_model   | metric   |   result |
+|:-------------------------------|:------------------|:-------------|:---------|---------:|
+| CYP2C9_Substrate_CarbonMangels | **SOTA**          | nan          | pr-auc   |    0.441 |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.372 |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.347 |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.337 |
+| CYP2C9_Substrate_CarbonMangels | grover_large      | linear       | pr-auc   |    0.327 |
+| CYP2C9_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | pr-auc   |    0.318 |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.3   |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.299 |
+| CYP2C9_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.293 |
+| CYP2C9_Substrate_CarbonMangels | mol2vec           | forest       | pr-auc   |    0.288 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_2M    | forest       | pr-auc   |    0.286 |
+| CYP2C9_Substrate_CarbonMangels | mol2vec           | linear       | pr-auc   |    0.283 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_20M   | forest       | pr-auc   |    0.282 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_20M   | linear       | pr-auc   |    0.282 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_2M    | linear       | pr-auc   |    0.282 |
+| CYP2C9_Substrate_CarbonMangels | rmat_4M           | forest       | pr-auc   |    0.281 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_200k  | forest       | pr-auc   |    0.281 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_200k  | linear       | pr-auc   |    0.281 |
+| CYP2C9_Substrate_CarbonMangels | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.281 |
+| CYP2C9_Substrate_CarbonMangels | rmat_4M           | linear       | pr-auc   |    0.28  |
+| CYP2C9_Substrate_CarbonMangels | grover_base       | forest       | pr-auc   |    0.278 |
+| CYP2C9_Substrate_CarbonMangels | rmat_4M_rdkit     | linear       | pr-auc   |    0.277 |
+| CYP2C9_Substrate_CarbonMangels | grover_base       | linear       | pr-auc   |    0.271 |
+
+### CYP2C9_Veith (classification)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| CYP2C9_Veith | **SOTA**          | nan          | pr-auc   |    0.859 |
+| CYP2C9_Veith | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.582 |
+| CYP2C9_Veith | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.579 |
+| CYP2C9_Veith | rmat_4M           | linear       | pr-auc   |    0.574 |
+| CYP2C9_Veith | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.573 |
+| CYP2C9_Veith | mat_masking_2M    | linear       | pr-auc   |    0.572 |
+| CYP2C9_Veith | mat_masking_200k  | linear       | pr-auc   |    0.56  |
+| CYP2C9_Veith | rmat_4M_rdkit     | linear       | pr-auc   |    0.559 |
+| CYP2C9_Veith | mat_masking_20M   | linear       | pr-auc   |    0.552 |
+| CYP2C9_Veith | mat_masking_20M   | forest       | pr-auc   |    0.529 |
+| CYP2C9_Veith | mol2vec           | linear       | pr-auc   |    0.529 |
+| CYP2C9_Veith | mol2vec           | forest       | pr-auc   |    0.522 |
+| CYP2C9_Veith | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.519 |
+| CYP2C9_Veith | mat_masking_2M    | forest       | pr-auc   |    0.511 |
+| CYP2C9_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.508 |
+| CYP2C9_Veith | rmat_4M_rdkit     | forest       | pr-auc   |    0.505 |
+| CYP2C9_Veith | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.498 |
+| CYP2C9_Veith | mat_masking_200k  | forest       | pr-auc   |    0.498 |
+| CYP2C9_Veith | grover_large      | linear       | pr-auc   |    0.497 |
+| CYP2C9_Veith | grover_base       | linear       | pr-auc   |    0.493 |
+| CYP2C9_Veith | rmat_4M           | forest       | pr-auc   |    0.488 |
+| CYP2C9_Veith | grover_large      | forest       | pr-auc   |    0.368 |
+| CYP2C9_Veith | grover_base       | forest       | pr-auc   |    0.362 |
+
+### CYP2D6_Substrate_CarbonMangels (classification)
+
+| dataset                        | base_model        | head_model   | metric   |   result |
+|:-------------------------------|:------------------|:-------------|:---------|---------:|
+| CYP2D6_Substrate_CarbonMangels | **SOTA**          | nan          | pr-auc   |    0.736 |
+| CYP2D6_Substrate_CarbonMangels | rmat_4M           | forest       | pr-auc   |    0.545 |
+| CYP2D6_Substrate_CarbonMangels | mol2vec           | forest       | pr-auc   |    0.531 |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_200k  | linear       | pr-auc   |    0.526 |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.513 |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.5   |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.493 |
+| CYP2D6_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | pr-auc   |    0.491 |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_20M   | linear       | pr-auc   |    0.487 |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.487 |
+| CYP2D6_Substrate_CarbonMangels | mol2vec           | linear       | pr-auc   |    0.483 |
+| CYP2D6_Substrate_CarbonMangels | rmat_4M_rdkit     | linear       | pr-auc   |    0.481 |
+| CYP2D6_Substrate_CarbonMangels | rmat_4M           | linear       | pr-auc   |    0.481 |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_20M   | forest       | pr-auc   |    0.465 |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_2M    | linear       | pr-auc   |    0.46  |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_2M    | forest       | pr-auc   |    0.451 |
+| CYP2D6_Substrate_CarbonMangels | mat_masking_200k  | forest       | pr-auc   |    0.44  |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.436 |
+| CYP2D6_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.432 |
+| CYP2D6_Substrate_CarbonMangels | grover_large      | linear       | pr-auc   |    0.407 |
+| CYP2D6_Substrate_CarbonMangels | grover_base       | linear       | pr-auc   |    0.383 |
+| CYP2D6_Substrate_CarbonMangels | grover_base       | forest       | pr-auc   |    0.363 |
+| CYP2D6_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.318 |
+
+### CYP2D6_Veith (classification)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| CYP2D6_Veith | **SOTA**          | nan          | pr-auc   |    0.79  |
+| CYP2D6_Veith | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.42  |
+| CYP2D6_Veith | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.405 |
+| CYP2D6_Veith | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.397 |
+| CYP2D6_Veith | mat_masking_200k  | linear       | pr-auc   |    0.393 |
+| CYP2D6_Veith | rmat_4M_rdkit     | linear       | pr-auc   |    0.384 |
+| CYP2D6_Veith | mol2vec           | linear       | pr-auc   |    0.367 |
+| CYP2D6_Veith | mat_masking_2M    | linear       | pr-auc   |    0.365 |
+| CYP2D6_Veith | mat_masking_20M   | linear       | pr-auc   |    0.354 |
+| CYP2D6_Veith | mat_masking_200k  | forest       | pr-auc   |    0.34  |
+| CYP2D6_Veith | mat_masking_20M   | forest       | pr-auc   |    0.335 |
+| CYP2D6_Veith | rmat_4M_rdkit     | forest       | pr-auc   |    0.326 |
+| CYP2D6_Veith | mat_masking_2M    | forest       | pr-auc   |    0.325 |
+| CYP2D6_Veith | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.324 |
+| CYP2D6_Veith | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.302 |
+| CYP2D6_Veith | grover_base       | linear       | pr-auc   |    0.299 |
+| CYP2D6_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.295 |
+| CYP2D6_Veith | mol2vec           | forest       | pr-auc   |    0.284 |
+| CYP2D6_Veith | grover_large      | linear       | pr-auc   |    0.282 |
+| CYP2D6_Veith | grover_large      | forest       | pr-auc   |    0.172 |
+| CYP2D6_Veith | grover_base       | forest       | pr-auc   |    0.172 |
+
+### CYP3A4_Substrate_CarbonMangels (classification)
+
+| dataset                        | base_model        | head_model   | metric   |   result |
+|:-------------------------------|:------------------|:-------------|:---------|---------:|
+| CYP3A4_Substrate_CarbonMangels | **SOTA**          | nan          | roc-auc  |    0.667 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.646 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.634 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.631 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | forest       | roc-auc  |    0.629 |
+| CYP3A4_Substrate_CarbonMangels | mol2vec           | linear       | roc-auc  |    0.624 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_2M    | linear       | roc-auc  |    0.616 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_20M   | linear       | roc-auc  |    0.613 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_200k  | linear       | roc-auc  |    0.604 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_20M   | forest       | roc-auc  |    0.599 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.596 |
+| CYP3A4_Substrate_CarbonMangels | rmat_4M           | forest       | roc-auc  |    0.584 |
+| CYP3A4_Substrate_CarbonMangels | grover_base       | linear       | roc-auc  |    0.582 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_2M    | forest       | roc-auc  |    0.581 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.57  |
+| CYP3A4_Substrate_CarbonMangels | mol2vec           | forest       | roc-auc  |    0.569 |
+| CYP3A4_Substrate_CarbonMangels | rmat_4M           | linear       | roc-auc  |    0.564 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_200k  | forest       | roc-auc  |    0.552 |
+| CYP3A4_Substrate_CarbonMangels | rmat_4M_rdkit     | linear       | roc-auc  |    0.541 |
+| CYP3A4_Substrate_CarbonMangels | grover_large      | linear       | roc-auc  |    0.536 |
+| CYP3A4_Substrate_CarbonMangels | grover_base       | forest       | roc-auc  |    0.532 |
+| CYP3A4_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | roc-auc  |    0.528 |
+| CYP3A4_Substrate_CarbonMangels | grover_large      | forest       | roc-auc  |    0.485 |
+
+### CYP3A4_Veith (classification)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| CYP3A4_Veith | **SOTA**          | nan          | pr-auc   |    0.916 |
+| CYP3A4_Veith | rmat_4M           | linear       | pr-auc   |    0.677 |
+| CYP3A4_Veith | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.671 |
+| CYP3A4_Veith | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.67  |
+| CYP3A4_Veith | rmat_4M_rdkit     | linear       | pr-auc   |    0.665 |
+| CYP3A4_Veith | mat_masking_2M    | linear       | pr-auc   |    0.663 |
+| CYP3A4_Veith | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.662 |
+| CYP3A4_Veith | mat_masking_200k  | linear       | pr-auc   |    0.658 |
+| CYP3A4_Veith | mat_masking_20M   | linear       | pr-auc   |    0.651 |
+| CYP3A4_Veith | mol2vec           | linear       | pr-auc   |    0.645 |
+| CYP3A4_Veith | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.631 |
+| CYP3A4_Veith | mat_masking_20M   | forest       | pr-auc   |    0.629 |
+| CYP3A4_Veith | mat_masking_2M    | forest       | pr-auc   |    0.627 |
+| CYP3A4_Veith | rmat_4M_rdkit     | forest       | pr-auc   |    0.623 |
+| CYP3A4_Veith | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.62  |
+| CYP3A4_Veith | mat_masking_200k  | forest       | pr-auc   |    0.612 |
+| CYP3A4_Veith | rmat_4M           | forest       | pr-auc   |    0.608 |
+| CYP3A4_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.607 |
+| CYP3A4_Veith | mol2vec           | forest       | pr-auc   |    0.603 |
+| CYP3A4_Veith | grover_large      | linear       | pr-auc   |    0.586 |
+| CYP3A4_Veith | grover_base       | linear       | pr-auc   |    0.574 |
+| CYP3A4_Veith | grover_large      | forest       | pr-auc   |    0.505 |
+| CYP3A4_Veith | grover_base       | forest       | pr-auc   |    0.497 |
+
+### Caco2_Wang (regression)
+
+| dataset    | base_model        | head_model   | metric   |   result |
+|:-----------|:------------------|:-------------|:---------|---------:|
+| Caco2_Wang | **SOTA**          | nan          | mae      |    0.276 |
+| Caco2_Wang | rmat_4M_rdkit     | forest       | mae      |    0.314 |
+| Caco2_Wang | mol2vec           | forest       | mae      |    0.326 |
+| Caco2_Wang | mat_masking_20M   | forest       | mae      |    0.331 |
+| Caco2_Wang | ChemBERTa-5M-MTR  | forest       | mae      |    0.343 |
+| Caco2_Wang | rmat_4M           | forest       | mae      |    0.345 |
+| Caco2_Wang | ChemBERTa-10M-MTR | forest       | mae      |    0.354 |
+| Caco2_Wang | ChemBERTa-77M-MTR | forest       | mae      |    0.358 |
+| Caco2_Wang | mat_masking_2M    | forest       | mae      |    0.36  |
+| Caco2_Wang | mat_masking_200k  | forest       | mae      |    0.381 |
+| Caco2_Wang | ChemBERTa-77M-MTR | linear       | mae      |    0.437 |
+| Caco2_Wang | ChemBERTa-10M-MTR | linear       | mae      |    0.45  |
+| Caco2_Wang | grover_large      | forest       | mae      |    0.494 |
+| Caco2_Wang | grover_base       | forest       | mae      |    0.513 |
+| Caco2_Wang | mol2vec           | linear       | mae      |    0.611 |
+| Caco2_Wang | rmat_4M_rdkit     | linear       | mae      |    0.727 |
+| Caco2_Wang | grover_large      | linear       | mae      |    0.741 |
+| Caco2_Wang | grover_base       | linear       | mae      |    0.788 |
+| Caco2_Wang | rmat_4M           | linear       | mae      |    0.809 |
+| Caco2_Wang | ChemBERTa-5M-MTR  | linear       | mae      |    0.914 |
+| Caco2_Wang | mat_masking_200k  | linear       | mae      |    5.092 |
+| Caco2_Wang | mat_masking_20M   | linear       | mae      |    6.734 |
+| Caco2_Wang | mat_masking_2M    | linear       | mae      |   17.69  |
+
+### Clearance_Hepatocyte_AZ (regression)
+
+| dataset                 | base_model        | head_model   | metric   |   result |
+|:------------------------|:------------------|:-------------|:---------|---------:|
+| Clearance_Hepatocyte_AZ | **SOTA**          | nan          | spearman |    0.536 |
+| Clearance_Hepatocyte_AZ | rmat_4M_rdkit     | forest       | spearman |    0.323 |
+| Clearance_Hepatocyte_AZ | ChemBERTa-77M-MTR | forest       | spearman |    0.298 |
+| Clearance_Hepatocyte_AZ | mol2vec           | linear       | spearman |    0.298 |
+| Clearance_Hepatocyte_AZ | mol2vec           | forest       | spearman |    0.29  |
+| Clearance_Hepatocyte_AZ | ChemBERTa-10M-MTR | forest       | spearman |    0.287 |
+| Clearance_Hepatocyte_AZ | grover_base       | linear       | spearman |    0.286 |
+| Clearance_Hepatocyte_AZ | mat_masking_20M   | forest       | spearman |    0.253 |
+| Clearance_Hepatocyte_AZ | mat_masking_200k  | forest       | spearman |    0.247 |
+| Clearance_Hepatocyte_AZ | mat_masking_2M    | forest       | spearman |    0.234 |
+| Clearance_Hepatocyte_AZ | ChemBERTa-77M-MTR | linear       | spearman |    0.224 |
+| Clearance_Hepatocyte_AZ | ChemBERTa-5M-MTR  | forest       | spearman |    0.223 |
+| Clearance_Hepatocyte_AZ | ChemBERTa-10M-MTR | linear       | spearman |    0.213 |
+| Clearance_Hepatocyte_AZ | mat_masking_200k  | linear       | spearman |    0.205 |
+| Clearance_Hepatocyte_AZ | rmat_4M           | forest       | spearman |    0.198 |
+| Clearance_Hepatocyte_AZ | ChemBERTa-5M-MTR  | linear       | spearman |    0.185 |
+| Clearance_Hepatocyte_AZ | mat_masking_2M    | linear       | spearman |    0.143 |
+| Clearance_Hepatocyte_AZ | grover_large      | linear       | spearman |    0.083 |
+| Clearance_Hepatocyte_AZ | rmat_4M           | linear       | spearman |    0.073 |
+| Clearance_Hepatocyte_AZ | mat_masking_20M   | linear       | spearman |    0.044 |
+| Clearance_Hepatocyte_AZ | grover_base       | forest       | spearman |    0.041 |
+| Clearance_Hepatocyte_AZ | grover_large      | forest       | spearman |   -0.011 |
+| Clearance_Hepatocyte_AZ | rmat_4M_rdkit     | linear       | spearman |   -0.059 |
+
+### HIA_Hou (classification)
+
+| dataset   | base_model        | head_model   | metric   |   result |
+|:----------|:------------------|:-------------|:---------|---------:|
+| HIA_Hou   | **SOTA**          | nan          | roc-auc  |    0.989 |
+| HIA_Hou   | rmat_4M_rdkit     | linear       | roc-auc  |    0.933 |
+| HIA_Hou   | rmat_4M           | linear       | roc-auc  |    0.933 |
+| HIA_Hou   | mol2vec           | linear       | roc-auc  |    0.917 |
+| HIA_Hou   | mat_masking_20M   | linear       | roc-auc  |    0.902 |
+| HIA_Hou   | mat_masking_2M    | linear       | roc-auc  |    0.891 |
+| HIA_Hou   | mat_masking_200k  | linear       | roc-auc  |    0.867 |
+| HIA_Hou   | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.859 |
+| HIA_Hou   | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.843 |
+| HIA_Hou   | mat_masking_20M   | forest       | roc-auc  |    0.835 |
+| HIA_Hou   | mat_masking_2M    | forest       | roc-auc  |    0.822 |
+| HIA_Hou   | mol2vec           | forest       | roc-auc  |    0.822 |
+| HIA_Hou   | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.817 |
+| HIA_Hou   | rmat_4M           | forest       | roc-auc  |    0.809 |
+| HIA_Hou   | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.791 |
+| HIA_Hou   | rmat_4M_rdkit     | forest       | roc-auc  |    0.778 |
+| HIA_Hou   | mat_masking_200k  | forest       | roc-auc  |    0.774 |
+| HIA_Hou   | ChemBERTa-5M-MTR  | forest       | roc-auc  |    0.706 |
+| HIA_Hou   | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.704 |
+| HIA_Hou   | grover_large      | linear       | roc-auc  |    0.676 |
+| HIA_Hou   | grover_base       | linear       | roc-auc  |    0.672 |
+| HIA_Hou   | grover_large      | forest       | roc-auc  |    0.626 |
+| HIA_Hou   | grover_base       | forest       | roc-auc  |    0.565 |
+
+### Half_Life_Obach (regression)
+
+| dataset         | base_model        | head_model   | metric   |   result |
+|:----------------|:------------------|:-------------|:---------|---------:|
+| Half_Life_Obach | **SOTA**          | nan          | spearman |    0.576 |
+| Half_Life_Obach | mol2vec           | forest       | spearman |    0.37  |
+| Half_Life_Obach | rmat_4M_rdkit     | forest       | spearman |    0.345 |
+| Half_Life_Obach | mat_masking_20M   | forest       | spearman |    0.293 |
+| Half_Life_Obach | mat_masking_2M    | forest       | spearman |    0.287 |
+| Half_Life_Obach | ChemBERTa-5M-MTR  | forest       | spearman |    0.267 |
+| Half_Life_Obach | rmat_4M           | forest       | spearman |    0.246 |
+| Half_Life_Obach | mat_masking_200k  | forest       | spearman |    0.246 |
+| Half_Life_Obach | ChemBERTa-77M-MTR | forest       | spearman |    0.208 |
+| Half_Life_Obach | ChemBERTa-10M-MTR | forest       | spearman |    0.203 |
+| Half_Life_Obach | mat_masking_200k  | linear       | spearman |    0.144 |
+| Half_Life_Obach | ChemBERTa-5M-MTR  | linear       | spearman |    0.115 |
+| Half_Life_Obach | rmat_4M_rdkit     | linear       | spearman |    0.11  |
+| Half_Life_Obach | mat_masking_20M   | linear       | spearman |    0.092 |
+| Half_Life_Obach | grover_base       | linear       | spearman |    0.081 |
+| Half_Life_Obach | mat_masking_2M    | linear       | spearman |    0.078 |
+| Half_Life_Obach | mol2vec           | linear       | spearman |    0.047 |
+| Half_Life_Obach | grover_large      | linear       | spearman |    0.044 |
+| Half_Life_Obach | grover_large      | forest       | spearman |    0.04  |
+| Half_Life_Obach | rmat_4M           | linear       | spearman |    0.037 |
+| Half_Life_Obach | ChemBERTa-77M-MTR | linear       | spearman |    0.019 |
+| Half_Life_Obach | grover_base       | forest       | spearman |   -0.002 |
+| Half_Life_Obach | ChemBERTa-10M-MTR | linear       | spearman |   -0.021 |
+
+### Lipophilicity_AstraZeneca (regression)
+
+| dataset                   | base_model        | head_model   | metric   |   result |
+|:--------------------------|:------------------|:-------------|:---------|---------:|
+| Lipophilicity_AstraZeneca | **SOTA**          | nan          | mae      |    0.467 |
+| Lipophilicity_AstraZeneca | ChemBERTa-77M-MTR | linear       | mae      |    0.598 |
+| Lipophilicity_AstraZeneca | ChemBERTa-10M-MTR | linear       | mae      |    0.603 |
+| Lipophilicity_AstraZeneca | mat_masking_2M    | linear       | mae      |    0.604 |
+| Lipophilicity_AstraZeneca | mat_masking_200k  | linear       | mae      |    0.609 |
+| Lipophilicity_AstraZeneca | mat_masking_20M   | linear       | mae      |    0.61  |
+| Lipophilicity_AstraZeneca | ChemBERTa-5M-MTR  | linear       | mae      |    0.619 |
+| Lipophilicity_AstraZeneca | mol2vec           | linear       | mae      |    0.659 |
+| Lipophilicity_AstraZeneca | rmat_4M_rdkit     | forest       | mae      |    0.691 |
+| Lipophilicity_AstraZeneca | ChemBERTa-10M-MTR | forest       | mae      |    0.708 |
+| Lipophilicity_AstraZeneca | ChemBERTa-5M-MTR  | forest       | mae      |    0.731 |
+| Lipophilicity_AstraZeneca | mat_masking_2M    | forest       | mae      |    0.742 |
+| Lipophilicity_AstraZeneca | rmat_4M           | forest       | mae      |    0.744 |
+| Lipophilicity_AstraZeneca | ChemBERTa-77M-MTR | forest       | mae      |    0.748 |
+| Lipophilicity_AstraZeneca | mat_masking_20M   | forest       | mae      |    0.752 |
+| Lipophilicity_AstraZeneca | mat_masking_200k  | forest       | mae      |    0.757 |
+| Lipophilicity_AstraZeneca | mol2vec           | forest       | mae      |    0.811 |
+| Lipophilicity_AstraZeneca | grover_large      | forest       | mae      |    0.977 |
+| Lipophilicity_AstraZeneca | grover_base       | forest       | mae      |    1.006 |
+| Lipophilicity_AstraZeneca | grover_base       | linear       | mae      |    1.019 |
+| Lipophilicity_AstraZeneca | grover_large      | linear       | mae      |    1.333 |
+| Lipophilicity_AstraZeneca | rmat_4M           | linear       | mae      |    1.668 |
+| Lipophilicity_AstraZeneca | rmat_4M_rdkit     | linear       | mae      |    2.935 |
+
+### Pgp_Broccatelli (classification)
+
+| dataset         | base_model        | head_model   | metric   |   result |
+|:----------------|:------------------|:-------------|:---------|---------:|
+| Pgp_Broccatelli | **SOTA**          | nan          | roc-auc  |    0.938 |
+| Pgp_Broccatelli | mat_masking_2M    | forest       | roc-auc  |    0.865 |
+| Pgp_Broccatelli | mat_masking_200k  | linear       | roc-auc  |    0.849 |
+| Pgp_Broccatelli | mat_masking_2M    | linear       | roc-auc  |    0.849 |
+| Pgp_Broccatelli | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.833 |
+| Pgp_Broccatelli | mat_masking_20M   | forest       | roc-auc  |    0.821 |
+| Pgp_Broccatelli | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.813 |
+| Pgp_Broccatelli | rmat_4M           | forest       | roc-auc  |    0.809 |
+| Pgp_Broccatelli | mat_masking_20M   | linear       | roc-auc  |    0.808 |
+| Pgp_Broccatelli | mol2vec           | linear       | roc-auc  |    0.804 |
+| Pgp_Broccatelli | mat_masking_200k  | forest       | roc-auc  |    0.8   |
+| Pgp_Broccatelli | ChemBERTa-5M-MTR  | forest       | roc-auc  |    0.797 |
+| Pgp_Broccatelli | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.792 |
+| Pgp_Broccatelli | rmat_4M_rdkit     | forest       | roc-auc  |    0.785 |
+| Pgp_Broccatelli | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.776 |
+| Pgp_Broccatelli | mol2vec           | forest       | roc-auc  |    0.773 |
+| Pgp_Broccatelli | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.757 |
+| Pgp_Broccatelli | rmat_4M           | linear       | roc-auc  |    0.751 |
+| Pgp_Broccatelli | rmat_4M_rdkit     | linear       | roc-auc  |    0.747 |
+| Pgp_Broccatelli | grover_base       | linear       | roc-auc  |    0.738 |
+| Pgp_Broccatelli | grover_large      | linear       | roc-auc  |    0.702 |
+| Pgp_Broccatelli | grover_large      | forest       | roc-auc  |    0.669 |
+| Pgp_Broccatelli | grover_base       | forest       | roc-auc  |    0.656 |
+
+### Solubility_AqSolDB (regression)
+
+| dataset            | base_model        | head_model   | metric   |   result |
+|:-------------------|:------------------|:-------------|:---------|---------:|
+| Solubility_AqSolDB | **SOTA**          | nan          | mae      |    0.761 |
+| Solubility_AqSolDB | rmat_4M_rdkit     | forest       | mae      |    0.869 |
+| Solubility_AqSolDB | mat_masking_20M   | linear       | mae      |    0.871 |
+| Solubility_AqSolDB | mat_masking_200k  | linear       | mae      |    0.885 |
+| Solubility_AqSolDB | mat_masking_2M    | linear       | mae      |    0.904 |
+| Solubility_AqSolDB | ChemBERTa-10M-MTR | linear       | mae      |    0.951 |
+| Solubility_AqSolDB | ChemBERTa-77M-MTR | linear       | mae      |    0.965 |
+| Solubility_AqSolDB | mat_masking_2M    | forest       | mae      |    0.993 |
+| Solubility_AqSolDB | rmat_4M           | forest       | mae      |    1.003 |
+| Solubility_AqSolDB | mat_masking_20M   | forest       | mae      |    1.015 |
+| Solubility_AqSolDB | ChemBERTa-10M-MTR | forest       | mae      |    1.02  |
+| Solubility_AqSolDB | ChemBERTa-5M-MTR  | linear       | mae      |    1.021 |
+| Solubility_AqSolDB | ChemBERTa-5M-MTR  | forest       | mae      |    1.029 |
+| Solubility_AqSolDB | ChemBERTa-77M-MTR | forest       | mae      |    1.029 |
+| Solubility_AqSolDB | mat_masking_200k  | forest       | mae      |    1.04  |
+| Solubility_AqSolDB | mol2vec           | forest       | mae      |    1.052 |
+| Solubility_AqSolDB | rmat_4M           | linear       | mae      |    1.119 |
+| Solubility_AqSolDB | rmat_4M_rdkit     | linear       | mae      |    1.134 |
+| Solubility_AqSolDB | mol2vec           | linear       | mae      |    1.164 |
+| Solubility_AqSolDB | grover_base       | linear       | mae      |    1.252 |
+| Solubility_AqSolDB | grover_large      | linear       | mae      |    1.342 |
+| Solubility_AqSolDB | grover_large      | forest       | mae      |    1.423 |
+| Solubility_AqSolDB | grover_base       | forest       | mae      |    1.498 |
+
+### VDss_Lombardo (regression)
+
+| dataset       | base_model        | head_model   | metric   |   result |
+|:--------------|:------------------|:-------------|:---------|---------:|
+| VDss_Lombardo | **SOTA**          | nan          | spearman |    0.713 |
+| VDss_Lombardo | mat_masking_2M    | forest       | spearman |    0.478 |
+| VDss_Lombardo | mat_masking_20M   | forest       | spearman |    0.468 |
+| VDss_Lombardo | rmat_4M_rdkit     | forest       | spearman |    0.43  |
+| VDss_Lombardo | ChemBERTa-10M-MTR | forest       | spearman |    0.411 |
+| VDss_Lombardo | mat_masking_200k  | forest       | spearman |    0.409 |
+| VDss_Lombardo | rmat_4M           | forest       | spearman |    0.399 |
+| VDss_Lombardo | mol2vec           | forest       | spearman |    0.381 |
+| VDss_Lombardo | ChemBERTa-77M-MTR | forest       | spearman |    0.373 |
+| VDss_Lombardo | ChemBERTa-10M-MTR | linear       | spearman |    0.284 |
+| VDss_Lombardo | ChemBERTa-5M-MTR  | forest       | spearman |    0.262 |
+| VDss_Lombardo | grover_large      | forest       | spearman |    0.179 |
+| VDss_Lombardo | ChemBERTa-77M-MTR | linear       | spearman |    0.149 |
+| VDss_Lombardo | mol2vec           | linear       | spearman |    0.136 |
+| VDss_Lombardo | grover_base       | forest       | spearman |    0.081 |
+| VDss_Lombardo | mat_masking_20M   | linear       | spearman |    0.07  |
+| VDss_Lombardo | grover_base       | linear       | spearman |    0.054 |
+| VDss_Lombardo | rmat_4M           | linear       | spearman |    0.048 |
+| VDss_Lombardo | mat_masking_200k  | linear       | spearman |    0.044 |
+| VDss_Lombardo | rmat_4M_rdkit     | linear       | spearman |    0.043 |
+| VDss_Lombardo | mat_masking_2M    | linear       | spearman |    0.04  |
+| VDss_Lombardo | grover_large      | linear       | spearman |    0.03  |
+| VDss_Lombardo | ChemBERTa-5M-MTR  | linear       | spearman |   -0.014 |
+
+### ogbg-molbace (classification)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molbace | mat_masking_20M   | linear       | rocauc   | 0.683533 |
+| ogbg-molbace | mat_masking_2M    | forest       | rocauc   | 0.682664 |
+| ogbg-molbace | rmat_4M           | forest       | rocauc   | 0.670318 |
+| ogbg-molbace | ChemBERTa-10M-MTR | forest       | rocauc   | 0.669449 |
+| ogbg-molbace | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.66771  |
+| ogbg-molbace | mol2vec           | forest       | rocauc   | 0.66771  |
+| ogbg-molbace | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.666841 |
+| ogbg-molbace | rmat_4M           | linear       | rocauc   | 0.665971 |
+| ogbg-molbace | ChemBERTa-77M-MTR | forest       | rocauc   | 0.665015 |
+| ogbg-molbace | rmat_4M_rdkit     | forest       | rocauc   | 0.665015 |
+| ogbg-molbace | ChemBERTa-10M-MTR | linear       | rocauc   | 0.664145 |
+| ogbg-molbace | mat_masking_2M    | linear       | rocauc   | 0.663276 |
+| ogbg-molbace | ChemBERTa-77M-MTR | linear       | rocauc   | 0.662407 |
+| ogbg-molbace | mat_masking_200k  | forest       | rocauc   | 0.660581 |
+| ogbg-molbace | mat_masking_20M   | forest       | rocauc   | 0.660581 |
+| ogbg-molbace | mat_masking_200k  | linear       | rocauc   | 0.645627 |
+| ogbg-molbace | rmat_4M_rdkit     | linear       | rocauc   | 0.61485  |
+| ogbg-molbace | mol2vec           | linear       | rocauc   | 0.609546 |
+| ogbg-molbace | grover_base       | linear       | rocauc   | 0.587463 |
+| ogbg-molbace | grover_large      | linear       | rocauc   | 0.546166 |
+| ogbg-molbace | grover_base       | forest       | rocauc   | 0.535472 |
+| ogbg-molbace | grover_large      | forest       | rocauc   | 0.535472 |
+
+### ogbg-molbbbp (classification)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molbbbp | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.668981 |
+| ogbg-molbbbp | ChemBERTa-77M-MTR | linear       | rocauc   | 0.659144 |
+| ogbg-molbbbp | rmat_4M_rdkit     | linear       | rocauc   | 0.656829 |
+| ogbg-molbbbp | ChemBERTa-10M-MTR | linear       | rocauc   | 0.633681 |
+| ogbg-molbbbp | rmat_4M           | linear       | rocauc   | 0.632523 |
+| ogbg-molbbbp | ChemBERTa-10M-MTR | forest       | rocauc   | 0.623264 |
+| ogbg-molbbbp | mat_masking_2M    | linear       | rocauc   | 0.59838  |
+| ogbg-molbbbp | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.596065 |
+| ogbg-molbbbp | mol2vec           | linear       | rocauc   | 0.594329 |
+| ogbg-molbbbp | rmat_4M_rdkit     | forest       | rocauc   | 0.589699 |
+| ogbg-molbbbp | grover_large      | linear       | rocauc   | 0.583333 |
+| ogbg-molbbbp | rmat_4M           | forest       | rocauc   | 0.581597 |
+| ogbg-molbbbp | ChemBERTa-77M-MTR | forest       | rocauc   | 0.581019 |
+| ogbg-molbbbp | mat_masking_200k  | linear       | rocauc   | 0.578125 |
+| ogbg-molbbbp | grover_base       | linear       | rocauc   | 0.576389 |
+| ogbg-molbbbp | mat_masking_2M    | forest       | rocauc   | 0.571759 |
+| ogbg-molbbbp | mat_masking_20M   | linear       | rocauc   | 0.566551 |
+| ogbg-molbbbp | mat_masking_20M   | forest       | rocauc   | 0.560185 |
+| ogbg-molbbbp | mol2vec           | forest       | rocauc   | 0.556713 |
+| ogbg-molbbbp | mat_masking_200k  | forest       | rocauc   | 0.540509 |
+| ogbg-molbbbp | grover_base       | forest       | rocauc   | 0.49537  |
+| ogbg-molbbbp | grover_large      | forest       | rocauc   | 0.475694 |
+
+### ogbg-molclintox (classification)
+
+| dataset         | base_model        | head_model   | metric   |   result |
+|:----------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molclintox | ChemBERTa-10M-MTR | linear       | rocauc   | 0.892646 |
+| ogbg-molclintox | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.890834 |
+| ogbg-molclintox | ChemBERTa-77M-MTR | linear       | rocauc   | 0.838057 |
+| ogbg-molclintox | ChemBERTa-77M-MTR | forest       | rocauc   | 0.806682 |
+| ogbg-molclintox | mol2vec           | linear       | rocauc   | 0.791085 |
+| ogbg-molclintox | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.785279 |
+| ogbg-molclintox | rmat_4M_rdkit     | linear       | rocauc   | 0.755689 |
+| ogbg-molclintox | rmat_4M           | linear       | rocauc   | 0.752079 |
+| ogbg-molclintox | mat_masking_2M    | linear       | rocauc   | 0.747637 |
+| ogbg-molclintox | ChemBERTa-10M-MTR | forest       | rocauc   | 0.730715 |
+| ogbg-molclintox | mat_masking_20M   | linear       | rocauc   | 0.700281 |
+| ogbg-molclintox | mat_masking_200k  | linear       | rocauc   | 0.69306  |
+| ogbg-molclintox | grover_large      | linear       | rocauc   | 0.587247 |
+| ogbg-molclintox | grover_base       | linear       | rocauc   | 0.564045 |
+| ogbg-molclintox | mat_masking_20M   | forest       | rocauc   | 0.547382 |
+| ogbg-molclintox | mat_masking_2M    | forest       | rocauc   | 0.546524 |
+| ogbg-molclintox | mat_masking_200k  | forest       | rocauc   | 0.545571 |
+| ogbg-molclintox | rmat_4M_rdkit     | forest       | rocauc   | 0.523188 |
+| ogbg-molclintox | rmat_4M           | forest       | rocauc   | 0.5      |
+| ogbg-molclintox | mol2vec           | forest       | rocauc   | 0.5      |
+| ogbg-molclintox | grover_base       | forest       | rocauc   | 0.49639  |
+| ogbg-molclintox | grover_large      | forest       | rocauc   | 0.494578 |
+
+### ogbg-molesol (regression)
+
+| dataset      | base_model        | head_model   | metric   |     result |
+|:-------------|:------------------|:-------------|:---------|-----------:|
+| ogbg-molesol | rmat_4M_rdkit     | forest       | rmse     |   0.8261   |
+| ogbg-molesol | ChemBERTa-10M-MTR | forest       | rmse     |   0.932427 |
+| ogbg-molesol | mat_masking_20M   | forest       | rmse     |   0.961894 |
+| ogbg-molesol | mat_masking_2M    | forest       | rmse     |   0.968184 |
+| ogbg-molesol | rmat_4M           | forest       | rmse     |   1.01359  |
+| ogbg-molesol | mat_masking_200k  | forest       | rmse     |   1.06219  |
+| ogbg-molesol | ChemBERTa-5M-MTR  | forest       | rmse     |   1.10099  |
+| ogbg-molesol | ChemBERTa-77M-MTR | forest       | rmse     |   1.113    |
+| ogbg-molesol | mol2vec           | forest       | rmse     |   1.1342   |
+| ogbg-molesol | ChemBERTa-10M-MTR | linear       | rmse     |   1.35933  |
+| ogbg-molesol | ChemBERTa-5M-MTR  | linear       | rmse     |   1.58274  |
+| ogbg-molesol | mol2vec           | linear       | rmse     |   1.60867  |
+| ogbg-molesol | ChemBERTa-77M-MTR | linear       | rmse     |   1.63884  |
+| ogbg-molesol | grover_large      | forest       | rmse     |   1.66699  |
+| ogbg-molesol | grover_base       | forest       | rmse     |   1.88412  |
+| ogbg-molesol | grover_large      | linear       | rmse     |   2.19911  |
+| ogbg-molesol | grover_base       | linear       | rmse     |   2.31943  |
+| ogbg-molesol | mat_masking_2M    | linear       | rmse     |  29.1458   |
+| ogbg-molesol | mat_masking_20M   | linear       | rmse     |  52.8683   |
+| ogbg-molesol | mat_masking_200k  | linear       | rmse     |  58.773    |
+| ogbg-molesol | rmat_4M_rdkit     | linear       | rmse     | 172.599    |
+| ogbg-molesol | rmat_4M           | linear       | rmse     | 300.781    |
+
+### ogbg-molfreesolv (regression)
+
+| dataset          | base_model        | head_model   | metric   |   result |
+|:-----------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molfreesolv | mat_masking_20M   | forest       | rmse     |  2.16738 |
+| ogbg-molfreesolv | mat_masking_2M    | forest       | rmse     |  2.25702 |
+| ogbg-molfreesolv | ChemBERTa-10M-MTR | forest       | rmse     |  2.26351 |
+| ogbg-molfreesolv | ChemBERTa-5M-MTR  | forest       | rmse     |  2.29399 |
+| ogbg-molfreesolv | rmat_4M_rdkit     | forest       | rmse     |  2.36348 |
+| ogbg-molfreesolv | mat_masking_200k  | forest       | rmse     |  2.3864  |
+| ogbg-molfreesolv | rmat_4M           | linear       | rmse     |  2.45472 |
+| ogbg-molfreesolv | rmat_4M_rdkit     | linear       | rmse     |  2.47985 |
+| ogbg-molfreesolv | rmat_4M           | forest       | rmse     |  2.89852 |
+| ogbg-molfreesolv | grover_base       | forest       | rmse     |  3.20396 |
+| ogbg-molfreesolv | ChemBERTa-77M-MTR | forest       | rmse     |  3.33085 |
+| ogbg-molfreesolv | grover_large      | forest       | rmse     |  3.40879 |
+| ogbg-molfreesolv | mol2vec           | forest       | rmse     |  3.49469 |
+| ogbg-molfreesolv | grover_large      | linear       | rmse     |  3.50614 |
+| ogbg-molfreesolv | grover_base       | linear       | rmse     |  3.9148  |
+| ogbg-molfreesolv | ChemBERTa-5M-MTR  | linear       | rmse     |  7.24826 |
+| ogbg-molfreesolv | mat_masking_200k  | linear       | rmse     |  7.31636 |
+| ogbg-molfreesolv | mat_masking_2M    | linear       | rmse     |  7.59417 |
+| ogbg-molfreesolv | ChemBERTa-77M-MTR | linear       | rmse     |  7.63497 |
+| ogbg-molfreesolv | ChemBERTa-10M-MTR | linear       | rmse     |  7.82469 |
+| ogbg-molfreesolv | mat_masking_20M   | linear       | rmse     | 11.1612  |
+| ogbg-molfreesolv | mol2vec           | linear       | rmse     | 38.6383  |
+
+### ogbg-molhiv (classification)
+
+| dataset     | base_model        | head_model   | metric   |   result |
+|:------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molhiv | **SOTA**          | nan          | rocauc   | 0.8475   |
+| ogbg-molhiv | mol2vec           | forest       | rocauc   | 0.575291 |
+| ogbg-molhiv | mol2vec           | linear       | rocauc   | 0.574538 |
+| ogbg-molhiv | ChemBERTa-77M-MTR | linear       | rocauc   | 0.571445 |
+| ogbg-molhiv | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.567975 |
+| ogbg-molhiv | ChemBERTa-77M-MTR | forest       | rocauc   | 0.567599 |
+| ogbg-molhiv | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.563753 |
+| ogbg-molhiv | ChemBERTa-10M-MTR | forest       | rocauc   | 0.560032 |
+| ogbg-molhiv | ChemBERTa-10M-MTR | linear       | rocauc   | 0.556311 |
+| ogbg-molhiv | grover_large      | linear       | rocauc   | 0.5357   |
+| ogbg-molhiv | grover_base       | linear       | rocauc   | 0.518352 |
+| ogbg-molhiv | grover_large      | forest       | rocauc   | 0.507316 |
+| ogbg-molhiv | grover_base       | forest       | rocauc   | 0.499121 |
+
+### ogbg-mollipo (regression)
+
+| dataset      | base_model        | head_model   | metric   |   result |
+|:-------------|:------------------|:-------------|:---------|---------:|
+| ogbg-mollipo | ChemBERTa-5M-MTR  | linear       | rmse     | 0.795198 |
+| ogbg-mollipo | ChemBERTa-77M-MTR | linear       | rmse     | 0.806851 |
+| ogbg-mollipo | mat_masking_2M    | linear       | rmse     | 0.809546 |
+| ogbg-mollipo | rmat_4M_rdkit     | forest       | rmse     | 0.820876 |
+| ogbg-mollipo | ChemBERTa-10M-MTR | linear       | rmse     | 0.85315  |
+| ogbg-mollipo | mat_masking_20M   | forest       | rmse     | 0.858101 |
+| ogbg-mollipo | mat_masking_200k  | linear       | rmse     | 0.870232 |
+| ogbg-mollipo | mat_masking_20M   | linear       | rmse     | 0.875111 |
+| ogbg-mollipo | mat_masking_200k  | forest       | rmse     | 0.879541 |
+| ogbg-mollipo | ChemBERTa-10M-MTR | forest       | rmse     | 0.885533 |
+| ogbg-mollipo | mol2vec           | linear       | rmse     | 0.896467 |
+| ogbg-mollipo | mat_masking_2M    | forest       | rmse     | 0.898909 |
+| ogbg-mollipo | rmat_4M           | forest       | rmse     | 0.899879 |
+| ogbg-mollipo | ChemBERTa-5M-MTR  | forest       | rmse     | 0.92055  |
+| ogbg-mollipo | ChemBERTa-77M-MTR | forest       | rmse     | 0.930757 |
+| ogbg-mollipo | mol2vec           | forest       | rmse     | 0.953584 |
+| ogbg-mollipo | grover_base       | forest       | rmse     | 1.12756  |
+| ogbg-mollipo | grover_large      | forest       | rmse     | 1.14655  |
+| ogbg-mollipo | grover_base       | linear       | rmse     | 1.26927  |
+| ogbg-mollipo | grover_large      | linear       | rmse     | 1.44984  |
+| ogbg-mollipo | rmat_4M           | linear       | rmse     | 1.67961  |
+| ogbg-mollipo | rmat_4M_rdkit     | linear       | rmse     | 4.27902  |
+
+### ogbg-molmuv (classification)
+
+| dataset     | base_model        | head_model   | metric   |     result |
+|:------------|:------------------|:-------------|:---------|-----------:|
+| ogbg-molmuv | mol2vec           | linear       | ap       | 0.0246996  |
+| ogbg-molmuv | mat_masking_20M   | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mol2vec           | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_200k  | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_2M    | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-5M-MTR  | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-10M-MTR | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_20M   | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_200k  | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-77M-MTR | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_2M    | linear       | ap       | 0.00252069 |
+
+### ogbg-molsider (classification)
+
+| dataset       | base_model        | head_model   | metric   |   result |
+|:--------------|:------------------|:-------------|:---------|---------:|
+| ogbg-molsider | rmat_4M           | linear       | rocauc   | 0.565157 |
+| ogbg-molsider | rmat_4M_rdkit     | linear       | rocauc   | 0.548807 |
+| ogbg-molsider | rmat_4M_rdkit     | forest       | rocauc   | 0.543047 |
+| ogbg-molsider | mat_masking_2M    | linear       | rocauc   | 0.540698 |
+| ogbg-molsider | mol2vec           | linear       | rocauc   | 0.539678 |
+| ogbg-molsider | mat_masking_20M   | forest       | rocauc   | 0.539425 |
+| ogbg-molsider | mat_masking_2M    | forest       | rocauc   | 0.539263 |
+| ogbg-molsider | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.538553 |
+| ogbg-molsider | ChemBERTa-77M-MTR | linear       | rocauc   | 0.536537 |
+| ogbg-molsider | rmat_4M           | forest       | rocauc   | 0.535731 |
+| ogbg-molsider | mat_masking_20M   | linear       | rocauc   | 0.533032 |
+| ogbg-molsider | mat_masking_200k  | forest       | rocauc   | 0.531566 |
+| ogbg-molsider | mol2vec           | forest       | rocauc   | 0.527451 |
+| ogbg-molsider | mat_masking_200k  | linear       | rocauc   | 0.527033 |
+| ogbg-molsider | ChemBERTa-77M-MTR | forest       | rocauc   | 0.526663 |
+| ogbg-molsider | grover_base       | linear       | rocauc   | 0.525398 |
+| ogbg-molsider | ChemBERTa-10M-MTR | linear       | rocauc   | 0.52021  |
+| ogbg-molsider | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.519206 |
+| ogbg-molsider | grover_large      | linear       | rocauc   | 0.51919  |
+| ogbg-molsider | ChemBERTa-10M-MTR | forest       | rocauc   | 0.515792 |
+| ogbg-molsider | grover_base       | forest       | rocauc   | 0.503591 |
+| ogbg-molsider | grover_large      | forest       | rocauc   | 0.503448 |
+
+### ogbg-moltox21 (classification)
+
+| dataset       | base_model        | head_model   | metric   |   result |
+|:--------------|:------------------|:-------------|:---------|---------:|
+| ogbg-moltox21 | rmat_4M           | linear       | rocauc   | 0.610967 |
+| ogbg-moltox21 | rmat_4M_rdkit     | linear       | rocauc   | 0.605261 |
+| ogbg-moltox21 | mol2vec           | linear       | rocauc   | 0.603861 |
+| ogbg-moltox21 | ChemBERTa-10M-MTR | linear       | rocauc   | 0.591052 |
+| ogbg-moltox21 | mat_masking_2M    | linear       | rocauc   | 0.588861 |
+| ogbg-moltox21 | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.582479 |
+| ogbg-moltox21 | ChemBERTa-77M-MTR | linear       | rocauc   | 0.579727 |
+| ogbg-moltox21 | mat_masking_20M   | linear       | rocauc   | 0.568553 |
+| ogbg-moltox21 | mat_masking_2M    | forest       | rocauc   | 0.567389 |
+| ogbg-moltox21 | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.566163 |
+| ogbg-moltox21 | ChemBERTa-77M-MTR | forest       | rocauc   | 0.559167 |
+| ogbg-moltox21 | mat_masking_200k  | forest       | rocauc   | 0.558419 |
+| ogbg-moltox21 | grover_large      | linear       | rocauc   | 0.555958 |
+| ogbg-moltox21 | mat_masking_200k  | linear       | rocauc   | 0.555659 |
+| ogbg-moltox21 | mat_masking_20M   | forest       | rocauc   | 0.553639 |
+| ogbg-moltox21 | rmat_4M_rdkit     | forest       | rocauc   | 0.551576 |
+| ogbg-moltox21 | ChemBERTa-10M-MTR | forest       | rocauc   | 0.551278 |
+| ogbg-moltox21 | mol2vec           | forest       | rocauc   | 0.550443 |
+| ogbg-moltox21 | grover_base       | linear       | rocauc   | 0.545108 |
+| ogbg-moltox21 | rmat_4M           | forest       | rocauc   | 0.5447   |
+| ogbg-moltox21 | grover_large      | forest       | rocauc   | 0.514355 |
+| ogbg-moltox21 | grover_base       | forest       | rocauc   | 0.512665 |
+
+### ogbg-moltoxcast (classification)
+
+| dataset         | base_model        | head_model   | metric   |   result |
+|:----------------|:------------------|:-------------|:---------|---------:|
+| ogbg-moltoxcast | mol2vec           | linear       | rocauc   | 0.510599 |
+| ogbg-moltoxcast | ChemBERTa-10M-MTR | linear       | rocauc   | 0.506748 |
+| ogbg-moltoxcast | mat_masking_2M    | linear       | rocauc   | 0.504809 |
+| ogbg-moltoxcast | ChemBERTa-77M-MTR | forest       | rocauc   | 0.504269 |
+| ogbg-moltoxcast | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.504098 |
+| ogbg-moltoxcast | mol2vec           | forest       | rocauc   | 0.503902 |
+| ogbg-moltoxcast | ChemBERTa-10M-MTR | forest       | rocauc   | 0.503783 |
+| ogbg-moltoxcast | mat_masking_200k  | linear       | rocauc   | 0.503369 |
+| ogbg-moltoxcast | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.502916 |
+| ogbg-moltoxcast | mat_masking_20M   | linear       | rocauc   | 0.502762 |
+| ogbg-moltoxcast | ChemBERTa-77M-MTR | linear       | rocauc   | 0.502633 |
+| ogbg-moltoxcast | grover_base       | linear       | rocauc   | 0.501782 |
 

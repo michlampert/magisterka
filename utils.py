@@ -9,6 +9,8 @@ import deepchem as dc
 from rdkit import Chem
 from itertools import chain
 from functools import partial
+from transformers import AutoModelForMaskedLM, AutoTokenizer
+import torch.nn as nn
 
 logger = logging.getLogger("molecules")
 
@@ -71,6 +73,24 @@ def get_mol2vec_embedder():
     return process
 
 
+def get_chemberta_embedder(config):
+    chemberta = AutoModelForMaskedLM.from_pretrained(f"DeepChem/{config}")
+    chemberta._modules["lm_head"] = nn.Identity()
+    tokenizer = AutoTokenizer.from_pretrained(f"DeepChem/{config}")
+    
+    def model(smiles):
+        encoded_input = tokenizer(smiles, return_tensors="pt", padding=True, truncation=True)
+        model_output = chemberta(**encoded_input)
+        return model_output[0][::,0,::]
+        
+    def process(df):
+        with torch.no_grad():
+            tqdm.pandas()
+            df["embeddings"] = df.smiles.progress_map(lambda f: model(f)[0])
+    
+    return process
+
+
 def get_embedder_names():
     return [
         "mat_masking_200k",
@@ -81,6 +101,9 @@ def get_embedder_names():
         "rmat_4M",
         "rmat_4M_rdkit",
         "mol2vec",
+        "ChemBERTa-5M-MTR",
+        "ChemBERTa-10M-MTR",
+        "ChemBERTa-77M-MTR",
     ]
 
 
@@ -93,6 +116,8 @@ def get_embedder(name):
         return get_rmat_embedder(name)
     elif name in ["mol2vec"]:
         return get_mol2vec_embedder()
+    elif name in ["ChemBERTa-5M-MTR", "ChemBERTa-10M-MTR", "ChemBERTa-77M-MTR"]:
+        return get_chemberta_embedder(name)
 
 
 if __name__ == "__main__":

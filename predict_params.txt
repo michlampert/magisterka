@@ -1,0 +1,20 @@
+ogbg-moltoxcast mat_masking_200k
+ogbg-moltoxcast mat_masking_2M
+ogbg-moltoxcast mat_masking_20M
+ogbg-moltoxcast grover_base
+ogbg-moltoxcast grover_large
+ogbg-moltoxcast rmat_4M
+ogbg-moltoxcast rmat_4M_rdkit
+ogbg-molmuv grover_base
+ogbg-molmuv grover_large
+ogbg-molmuv rmat_4M
+ogbg-molmuv rmat_4M_rdkit
+ogbg-molmuv ChemBERTa-5M-MTR
+ogbg-molmuv ChemBERTa-10M-MTR
+ogbg-molmuv ChemBERTa-77M-MTR
+ogbg-molhiv mat_masking_200k
+ogbg-molhiv mat_masking_2M
+ogbg-molhiv mat_masking_20M
+ogbg-molhiv rmat_4M
+ogbg-molhiv rmat_4M_rdkit
+
