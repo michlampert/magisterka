@@ -66,7 +66,7 @@
 | CYP2C9_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | pr-auc   |    0.318 |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.3   |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.299 |
-| CYP2C9_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.293 |
+| CYP2C9_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.293 
 | CYP2C9_Substrate_CarbonMangels | mol2vec           | forest       | pr-auc   |    0.288 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_2M    | forest       | pr-auc   |    0.286 |
 | CYP2C9_Substrate_CarbonMangels | mol2vec           | linear       | pr-auc   |    0.283 |
@@ -630,15 +630,22 @@
 |:------------|:------------------|:-------------|:---------|-----------:|
 | ogbg-molmuv | mol2vec           | linear       | ap       | 0.0246996  |
 | ogbg-molmuv | mat_masking_20M   | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | mol2vec           | forest       | ap       | 0.00252069 |
-| ogbg-molmuv | mat_masking_200k  | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | mat_masking_2M    | forest       | ap       | 0.00252069 |
-| ogbg-molmuv | ChemBERTa-5M-MTR  | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | ChemBERTa-10M-MTR | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | mat_masking_20M   | forest       | ap       | 0.00252069 |
-| ogbg-molmuv | mat_masking_200k  | forest       | ap       | 0.00252069 |
-| ogbg-molmuv | ChemBERTa-77M-MTR | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-10M-MTR | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | rmat_4M           | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | rmat_4M_rdkit     | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | rmat_4M_rdkit     | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | rmat_4M           | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-77M-MTR | forest       | ap       | 0.00252069 |
 | ogbg-molmuv | mat_masking_2M    | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-77M-MTR | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_200k  | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_20M   | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-10M-MTR | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-5M-MTR  | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_2M    | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | mat_masking_200k  | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | mol2vec           | forest       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-5M-MTR  | forest       | ap       | 0.00252069 |
 
 ### ogbg-molsider (classification)
 
@@ -698,14 +705,20 @@
 
 | dataset         | base_model        | head_model   | metric   |   result |
 |:----------------|:------------------|:-------------|:---------|---------:|
+| ogbg-moltoxcast | rmat_4M_rdkit     | linear       | rocauc   | 0.519499 |
+| ogbg-moltoxcast | rmat_4M           | linear       | rocauc   | 0.516141 |
 | ogbg-moltoxcast | mol2vec           | linear       | rocauc   | 0.510599 |
 | ogbg-moltoxcast | ChemBERTa-10M-MTR | linear       | rocauc   | 0.506748 |
+| ogbg-moltoxcast | mat_masking_20M   | forest       | rocauc   | 0.504932 |
 | ogbg-moltoxcast | mat_masking_2M    | linear       | rocauc   | 0.504809 |
+| ogbg-moltoxcast | mat_masking_200k  | forest       | rocauc   | 0.504493 |
+| ogbg-moltoxcast | grover_large      | linear       | rocauc   | 0.504284 |
 | ogbg-moltoxcast | ChemBERTa-77M-MTR | forest       | rocauc   | 0.504269 |
 | ogbg-moltoxcast | ChemBERTa-5M-MTR  | linear       | rocauc   | 0.504098 |
 | ogbg-moltoxcast | mol2vec           | forest       | rocauc   | 0.503902 |
 | ogbg-moltoxcast | ChemBERTa-10M-MTR | forest       | rocauc   | 0.503783 |
 | ogbg-moltoxcast | mat_masking_200k  | linear       | rocauc   | 0.503369 |
+| ogbg-moltoxcast | mat_masking_2M    | forest       | rocauc   | 0.502981 |
 | ogbg-moltoxcast | ChemBERTa-5M-MTR  | forest       | rocauc   | 0.502916 |
 | ogbg-moltoxcast | mat_masking_20M   | linear       | rocauc   | 0.502762 |
 | ogbg-moltoxcast | ChemBERTa-77M-MTR | linear       | rocauc   | 0.502633 |
