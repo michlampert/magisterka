@@ -77,7 +77,7 @@ def get_tdc_regression_names():
         'Half_Life_Obach',
         'Lipophilicity_AstraZeneca',
         'Solubility_AqSolDB',
-        'HydrationFreeEnergy_FreeSolv',
+        # 'HydrationFreeEnergy_FreeSolv',
         'PPBR_AZ',
         'VDss_Lombardo',
         'Clearance_Hepatocyte_AZ',
@@ -86,15 +86,15 @@ def get_tdc_regression_names():
 
 def get_tdc_classification_names():
     return [
-        "PAMPA_NCATS",
+        # "PAMPA_NCATS",
         "HIA_Hou",
         "Pgp_Broccatelli",
         "Bioavailability_Ma",
         "BBB_Martins",
-        "CYP2C19_Veith",
+        # "CYP2C19_Veith",
         "CYP2D6_Veith",
         "CYP3A4_Veith",
-        "CYP1A2_Veith",
+        # "CYP1A2_Veith",
         "CYP2C9_Veith",
         "CYP2C9_Substrate_CarbonMangels",
         "CYP2D6_Substrate_CarbonMangels",
