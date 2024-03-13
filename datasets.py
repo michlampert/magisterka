@@ -78,7 +78,7 @@ def get_tdc_regression_names():
         'Lipophilicity_AstraZeneca',
         'Solubility_AqSolDB',
         # 'HydrationFreeEnergy_FreeSolv',
-        'PPBR_AZ',
+        # 'PPBR_AZ',
         'VDss_Lombardo',
         'Clearance_Hepatocyte_AZ',
     ]
@@ -104,6 +104,12 @@ def get_tdc_classification_names():
 
 def get_tdc_names():
     return get_tdc_regression_names() + get_tdc_classification_names()
+
+def get_regression_names():
+    return get_ogb_regression_names() + get_tdc_regression_names()
+
+def get_classification_names():
+    return get_ogb_classification_names() + get_tdc_classification_names()
 
 
 def get_dataset_names() -> Iterator:

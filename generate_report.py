@@ -45,15 +45,21 @@ def write_to_file(content):
 
 
 def read(name):
-    with open(f"results/{name}", "rb") as f:
-        return pickle.load(f)
+    print(name)
+    if os.path.isfile(f"results/{name}"):
+        with open(f"results/{name}", "rb") as f:
+            tmp = pickle.load(f)
+    else:
+        with open(f"results_tmp/{name}", "rb") as f:
+            tmp = pickle.load(f)
+    return tmp
 
 
 def main():
     with open("results.md", "w"):
         pass
 
-    results = pd.DataFrame.from_records([read(name) for name in os.listdir("results/")] + sota_results)
+    results = pd.DataFrame.from_records([read(name) for name in set(os.listdir("results/")) | set(os.listdir("results_tmp/"))] + sota_results)
 
     for name, group in results.groupby("dataset"):
         write_to_file(f"### {name} ({'classification' if name in [*get_tdc_classification_names(), *get_ogb_classification_names()] else 'regression'})")

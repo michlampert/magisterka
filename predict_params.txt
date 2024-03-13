@@ -1,222 +1,91 @@
-ogbg-molesol mat_masking_200k
-ogbg-molesol grover_base
-ogbg-molesol grover_large
-ogbg-molesol rmat_4M
-ogbg-molesol rmat_4M_rdkit
-ogbg-molfreesolv grover_large
-ogbg-molfreesolv rmat_4M
-ogbg-molfreesolv rmat_4M_rdkit
-ogbg-mollipo mat_masking_200k
-ogbg-mollipo mat_masking_2M
-ogbg-mollipo mat_masking_20M
-ogbg-mollipo grover_base
-ogbg-mollipo grover_large
-ogbg-mollipo rmat_4M
-ogbg-mollipo rmat_4M_rdkit
-ogbg-mollipo mol2vec
-ogbg-mollipo ChemBERTa-5M-MTR
-ogbg-mollipo ChemBERTa-10M-MTR
-ogbg-mollipo ChemBERTa-77M-MTR
-ogbg-molbace mat_masking_200k
-ogbg-molbace mat_masking_2M
-ogbg-molbace mat_masking_20M
-ogbg-molbace grover_base
-ogbg-molbace grover_large
-ogbg-molbace rmat_4M
-ogbg-molbace rmat_4M_rdkit
-ogbg-molbbbp mat_masking_200k
-ogbg-molbbbp mat_masking_2M
-ogbg-molbbbp mat_masking_20M
-ogbg-molbbbp grover_base
-ogbg-molbbbp grover_large
-ogbg-molbbbp rmat_4M
-ogbg-molbbbp rmat_4M_rdkit
-ogbg-molclintox mat_masking_200k
-ogbg-molclintox mat_masking_2M
-ogbg-molclintox mat_masking_20M
-ogbg-molclintox grover_base
-ogbg-molclintox grover_large
-ogbg-molclintox rmat_4M
-ogbg-molclintox rmat_4M_rdkit
-ogbg-molsider mat_masking_200k
-ogbg-molsider mat_masking_2M
-ogbg-molsider mat_masking_20M
-ogbg-molsider grover_base
-ogbg-molsider grover_large
-ogbg-molsider rmat_4M
-ogbg-molsider rmat_4M_rdkit
-ogbg-moltox21 mat_masking_200k
-ogbg-moltox21 mat_masking_2M
-ogbg-moltox21 mat_masking_20M
-ogbg-moltox21 grover_base
-ogbg-moltox21 grover_large
-ogbg-moltox21 rmat_4M
-ogbg-moltox21 rmat_4M_rdkit
-ogbg-moltox21 mol2vec
-ogbg-moltox21 ChemBERTa-5M-MTR
-ogbg-moltox21 ChemBERTa-10M-MTR
-ogbg-moltox21 ChemBERTa-77M-MTR
-ogbg-moltoxcast mat_masking_200k
-ogbg-moltoxcast mat_masking_2M
-ogbg-moltoxcast mat_masking_20M
-ogbg-moltoxcast grover_base
-ogbg-moltoxcast grover_large
-ogbg-moltoxcast rmat_4M
-ogbg-moltoxcast rmat_4M_rdkit
-ogbg-moltoxcast mol2vec
-ogbg-moltoxcast ChemBERTa-5M-MTR
-ogbg-moltoxcast ChemBERTa-10M-MTR
-ogbg-moltoxcast ChemBERTa-77M-MTR
-ogbg-molmuv mat_masking_200k
-ogbg-molmuv mat_masking_2M
-ogbg-molmuv mat_masking_20M
-ogbg-molmuv grover_base
-ogbg-molmuv grover_large
-ogbg-molmuv rmat_4M
-ogbg-molmuv rmat_4M_rdkit
-ogbg-molmuv mol2vec
-ogbg-molmuv ChemBERTa-5M-MTR
-ogbg-molmuv ChemBERTa-10M-MTR
-ogbg-molmuv ChemBERTa-77M-MTR
-ogbg-molhiv mat_masking_200k
-ogbg-molhiv mat_masking_2M
-ogbg-molhiv mat_masking_20M
-ogbg-molhiv grover_base
-ogbg-molhiv grover_large
-ogbg-molhiv rmat_4M
-ogbg-molhiv rmat_4M_rdkit
-ogbg-molhiv mol2vec
-ogbg-molhiv ChemBERTa-5M-MTR
-ogbg-molhiv ChemBERTa-10M-MTR
-ogbg-molhiv ChemBERTa-77M-MTR
-Caco2_Wang grover_base
-Caco2_Wang grover_large
-Caco2_Wang rmat_4M
-Caco2_Wang rmat_4M_rdkit
-Half_Life_Obach mat_masking_200k
-Half_Life_Obach mat_masking_2M
-Half_Life_Obach mat_masking_20M
-Half_Life_Obach grover_base
-Half_Life_Obach grover_large
-Half_Life_Obach rmat_4M
-Half_Life_Obach rmat_4M_rdkit
-Lipophilicity_AstraZeneca mat_masking_200k
-Lipophilicity_AstraZeneca mat_masking_2M
-Lipophilicity_AstraZeneca mat_masking_20M
-Lipophilicity_AstraZeneca grover_base
-Lipophilicity_AstraZeneca grover_large
-Lipophilicity_AstraZeneca rmat_4M
-Lipophilicity_AstraZeneca rmat_4M_rdkit
-Lipophilicity_AstraZeneca mol2vec
-Lipophilicity_AstraZeneca ChemBERTa-5M-MTR
-Lipophilicity_AstraZeneca ChemBERTa-10M-MTR
-Lipophilicity_AstraZeneca ChemBERTa-77M-MTR
-Solubility_AqSolDB mat_masking_200k
-Solubility_AqSolDB mat_masking_2M
-Solubility_AqSolDB mat_masking_20M
-Solubility_AqSolDB grover_base
-Solubility_AqSolDB grover_large
-Solubility_AqSolDB rmat_4M
-Solubility_AqSolDB rmat_4M_rdkit
-Solubility_AqSolDB mol2vec
-Solubility_AqSolDB ChemBERTa-5M-MTR
-Solubility_AqSolDB ChemBERTa-10M-MTR
-Solubility_AqSolDB ChemBERTa-77M-MTR
-PPBR_AZ mat_masking_200k
-PPBR_AZ mat_masking_2M
-PPBR_AZ mat_masking_20M
-PPBR_AZ grover_base
-PPBR_AZ grover_large
-PPBR_AZ rmat_4M
-PPBR_AZ rmat_4M_rdkit
-PPBR_AZ mol2vec
-PPBR_AZ ChemBERTa-5M-MTR
-PPBR_AZ ChemBERTa-10M-MTR
-PPBR_AZ ChemBERTa-77M-MTR
-VDss_Lombardo mat_masking_200k
-VDss_Lombardo mat_masking_2M
-VDss_Lombardo mat_masking_20M
-VDss_Lombardo grover_base
-VDss_Lombardo grover_large
-VDss_Lombardo rmat_4M
-VDss_Lombardo rmat_4M_rdkit
-Clearance_Hepatocyte_AZ mat_masking_200k
-Clearance_Hepatocyte_AZ mat_masking_2M
-Clearance_Hepatocyte_AZ mat_masking_20M
-Clearance_Hepatocyte_AZ grover_base
-Clearance_Hepatocyte_AZ grover_large
-Clearance_Hepatocyte_AZ rmat_4M
-Clearance_Hepatocyte_AZ rmat_4M_rdkit
-HIA_Hou grover_large
-Pgp_Broccatelli mat_masking_200k
-Pgp_Broccatelli mat_masking_2M
-Pgp_Broccatelli mat_masking_20M
-Pgp_Broccatelli grover_base
-Pgp_Broccatelli grover_large
-Pgp_Broccatelli rmat_4M
-Pgp_Broccatelli rmat_4M_rdkit
-Bioavailability_Ma grover_base
-Bioavailability_Ma grover_large
-Bioavailability_Ma rmat_4M
-Bioavailability_Ma rmat_4M_rdkit
-BBB_Martins mat_masking_200k
-BBB_Martins mat_masking_2M
-BBB_Martins mat_masking_20M
-BBB_Martins grover_base
-BBB_Martins grover_large
-BBB_Martins rmat_4M
-BBB_Martins rmat_4M_rdkit
-BBB_Martins ChemBERTa-5M-MTR
-BBB_Martins ChemBERTa-10M-MTR
-BBB_Martins ChemBERTa-77M-MTR
-CYP2D6_Veith mat_masking_200k
-CYP2D6_Veith mat_masking_2M
-CYP2D6_Veith mat_masking_20M
-CYP2D6_Veith grover_base
-CYP2D6_Veith grover_large
-CYP2D6_Veith rmat_4M
-CYP2D6_Veith rmat_4M_rdkit
-CYP2D6_Veith mol2vec
-CYP2D6_Veith ChemBERTa-5M-MTR
-CYP2D6_Veith ChemBERTa-10M-MTR
-CYP2D6_Veith ChemBERTa-77M-MTR
-CYP3A4_Veith mat_masking_200k
-CYP3A4_Veith mat_masking_2M
-CYP3A4_Veith mat_masking_20M
-CYP3A4_Veith grover_base
-CYP3A4_Veith grover_large
-CYP3A4_Veith rmat_4M
-CYP3A4_Veith rmat_4M_rdkit
-CYP3A4_Veith mol2vec
-CYP3A4_Veith ChemBERTa-5M-MTR
-CYP3A4_Veith ChemBERTa-10M-MTR
-CYP3A4_Veith ChemBERTa-77M-MTR
-CYP2C9_Veith mat_masking_200k
-CYP2C9_Veith mat_masking_2M
-CYP2C9_Veith mat_masking_20M
-CYP2C9_Veith grover_base
-CYP2C9_Veith grover_large
-CYP2C9_Veith rmat_4M
-CYP2C9_Veith rmat_4M_rdkit
-CYP2C9_Veith mol2vec
-CYP2C9_Veith ChemBERTa-5M-MTR
-CYP2C9_Veith ChemBERTa-10M-MTR
-CYP2C9_Veith ChemBERTa-77M-MTR
-CYP2C9_Substrate_CarbonMangels grover_base
-CYP2C9_Substrate_CarbonMangels grover_large
-CYP2C9_Substrate_CarbonMangels rmat_4M
-CYP2C9_Substrate_CarbonMangels rmat_4M_rdkit
-CYP2D6_Substrate_CarbonMangels mat_masking_200k
-CYP2D6_Substrate_CarbonMangels mat_masking_2M
-CYP2D6_Substrate_CarbonMangels mat_masking_20M
-CYP2D6_Substrate_CarbonMangels grover_base
-CYP2D6_Substrate_CarbonMangels grover_large
-CYP2D6_Substrate_CarbonMangels rmat_4M
-CYP2D6_Substrate_CarbonMangels rmat_4M_rdkit
-CYP3A4_Substrate_CarbonMangels mat_masking_200k
-CYP3A4_Substrate_CarbonMangels mat_masking_2M
-CYP3A4_Substrate_CarbonMangels mat_masking_20M
-CYP3A4_Substrate_CarbonMangels grover_base
-CYP3A4_Substrate_CarbonMangels grover_large
-CYP3A4_Substrate_CarbonMangels rmat_4M
-CYP3A4_Substrate_CarbonMangels rmat_4M_rdkit
+ogbg-moltox21 mat_masking_200k forest
+CYP3A4_Veith rmat_4M_rdkit ridge
+CYP3A4_Veith rmat_4M_rdkit forest
+CYP3A4_Veith grover_base ridge
+CYP3A4_Veith grover_base forest
+ogbg-moltoxcast rmat_4M_rdkit ridge
+ogbg-moltoxcast rmat_4M_rdkit forest
+ogbg-moltox21 ChemBERTa-5M-MTR forest
+CYP3A4_Veith mol2vec ridge
+CYP3A4_Veith mol2vec forest
+ogbg-moltoxcast mol2vec forest
+ogbg-molmuv rmat_4M ridge
+ogbg-molmuv rmat_4M forest
+ogbg-molmuv ChemBERTa-77M-MTR ridge
+ogbg-molmuv ChemBERTa-77M-MTR forest
+ogbg-molmuv mat_masking_200k ridge
+ogbg-molmuv mat_masking_200k forest
+ogbg-molsider mat_masking_2M forest
+ogbg-molhiv ChemBERTa-77M-MTR ridge
+ogbg-molhiv ChemBERTa-77M-MTR forest
+ogbg-molhiv grover_large ridge
+ogbg-molhiv grover_large forest
+CYP3A4_Veith mat_masking_2M ridge
+CYP3A4_Veith mat_masking_2M forest
+ogbg-molmuv ChemBERTa-5M-MTR ridge
+ogbg-molmuv ChemBERTa-5M-MTR forest
+ogbg-moltoxcast mat_masking_2M ridge
+ogbg-moltoxcast mat_masking_2M forest
+ogbg-molhiv ChemBERTa-5M-MTR ridge
+ogbg-molhiv ChemBERTa-5M-MTR forest
+ogbg-molsider grover_large forest
+ogbg-moltox21 ChemBERTa-10M-MTR forest
+ogbg-moltox21 grover_base forest
+CYP3A4_Veith ChemBERTa-77M-MTR ridge
+CYP3A4_Veith ChemBERTa-77M-MTR forest
+CYP3A4_Veith grover_large ridge
+CYP3A4_Veith grover_large forest
+ogbg-moltoxcast ChemBERTa-77M-MTR forest
+ogbg-moltoxcast grover_large ridge
+ogbg-moltoxcast grover_large forest
+ogbg-moltoxcast ChemBERTa-5M-MTR forest
+ogbg-moltox21 mat_masking_20M forest
+ogbg-molmuv ChemBERTa-10M-MTR ridge
+ogbg-molmuv ChemBERTa-10M-MTR forest
+ogbg-molmuv rmat_4M_rdkit ridge
+ogbg-molmuv rmat_4M_rdkit forest
+ogbg-molmuv grover_base ridge
+ogbg-molmuv grover_base forest
+ogbg-moltox21 mat_masking_2M forest
+ogbg-molsider rmat_4M forest
+CYP2D6_Veith rmat_4M ridge
+CYP2D6_Veith rmat_4M forest
+ogbg-molhiv ChemBERTa-10M-MTR ridge
+ogbg-molhiv ChemBERTa-10M-MTR forest
+ogbg-molhiv grover_base ridge
+ogbg-molhiv grover_base forest
+ogbg-moltox21 rmat_4M_rdkit forest
+CYP3A4_Veith rmat_4M ridge
+CYP3A4_Veith rmat_4M forest
+ogbg-molsider mat_masking_200k forest
+ogbg-moltoxcast rmat_4M ridge
+ogbg-moltoxcast rmat_4M forest
+ogbg-molsider rmat_4M_rdkit forest
+CYP3A4_Veith mat_masking_200k ridge
+CYP3A4_Veith mat_masking_200k forest
+ogbg-moltox21 mol2vec forest
+ogbg-moltoxcast mat_masking_200k ridge
+ogbg-moltoxcast mat_masking_200k forest
+ogbg-molmuv mat_masking_20M ridge
+ogbg-molmuv mat_masking_20M forest
+ogbg-moltox21 grover_large forest
+CYP3A4_Veith ChemBERTa-5M-MTR ridge
+CYP3A4_Veith ChemBERTa-5M-MTR forest
+CYP3A4_Veith ChemBERTa-10M-MTR ridge
+CYP3A4_Veith ChemBERTa-10M-MTR forest
+ogbg-molmuv mat_masking_2M ridge
+ogbg-molmuv mat_masking_2M forest
+ogbg-moltoxcast ChemBERTa-10M-MTR forest
+ogbg-moltoxcast grover_base ridge
+ogbg-moltoxcast grover_base forest
+ogbg-molmuv mol2vec ridge
+ogbg-molmuv mol2vec forest
+ogbg-molsider mat_masking_20M forest
+CYP3A4_Veith mat_masking_20M ridge
+CYP3A4_Veith mat_masking_20M forest
+ogbg-molhiv mol2vec forest
+ogbg-moltoxcast mat_masking_20M ridge
+ogbg-moltoxcast mat_masking_20M forest
+ogbg-moltox21 rmat_4M forest
+ogbg-moltox21 ChemBERTa-77M-MTR forest
+ogbg-molsider grover_base forest

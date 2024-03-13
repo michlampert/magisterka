@@ -22,8 +22,9 @@ from ogb.graphproppred import Evaluator
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RidgeClassifierCV, RidgeCV
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import precision_recall_curve, auc
+from sklearn.metrics import precision_recall_curve, auc, roc_auc_score as roc_auc, make_scorer
 from scipy.stats import spearmanr
+import traceback
 
 
 def predict_test(df, split_idx, model, **kwargs):
@@ -45,7 +46,7 @@ def predict_test(df, split_idx, model, **kwargs):
     return clf.predict(scaler.transform(X))
 
 
-# predict_regression_lin = partial(predict_test, model=lambda kwargs: linear_model.LinearRegression())
+predict_regression_lin = partial(predict_test, model=lambda kwargs: linear_model.LinearRegression())
 
 predict_regression_forest = partial(
     predict_test,
@@ -58,27 +59,32 @@ predict_regression_forest = partial(
         {
             "min_samples_split": np.logspace(1, 5, 4, base=2).astype(int)
         },
+        n_jobs=-1,
         refit=True,
-        **kwargs
+        scoring=kwargs.get("scoring", False),
     )
 )
 
-predict_regression_rigid = partial(
+predict_regression_ridge = partial(
     predict_test,
-    model=lambda kwargs: ClassifierChain(
-        RidgeCV(
-            alphas=np.logspace(-2, 2, 10),
-            cv=10,
-        )
+    model=lambda kwargs: RidgeCV(
+        alphas=np.logspace(-2, 2, 10),
+        scoring=kwargs.get("scoring", False),
     )
 )
 
-# predict_classification_lin = partial(predict_test, model=lambda: ClassifierChain(LogisticRegression()))
+predict_classification_lin = partial(predict_test, model=lambda kwargs: ClassifierChain(LogisticRegression()))
+
+
+class RandomForestClassifierProba(RandomForestClassifier):
+    def predict(self, X):
+        return self.predict_proba(X)[:, 1]
+
 
 predict_classification_forest = partial(
     predict_test,
     model=lambda kwargs: ClassifierChain(GridSearchCV(
-        RandomForestClassifier(
+        RandomForestClassifierProba(
             n_estimators=100,
             criterion="entropy",
             n_jobs=-1,
@@ -87,24 +93,30 @@ predict_classification_forest = partial(
         {
             "min_samples_split": np.logspace(1, 5, 4, base=2).astype(int)
         },
+        n_jobs=-1,
         refit=True,
-        **kwargs
+        scoring=kwargs.get("scoring", False),
     )))
 
-predict_classification_rigid = partial(
+class RidgeClassifierCVProba(RidgeClassifierCV):
+    def predict(self, X):
+        return 1 / (1 + np.exp(-self.decision_function(X)))
+
+predict_classification_ridge = partial(
     predict_test,
     model=lambda kwargs: ClassifierChain(
-        RidgeClassifierCV(
+        RidgeClassifierCVProba(
             alphas=np.logspace(-2, 2, 10),
-            cv=10,
-            penalty="l1",
+            class_weight="balanced",
+            scoring=kwargs.get("scoring", False),
         )
     ))
 
 
 def read(name):
     with open(f"results/{name}", "rb") as f:
-        return pickle.load(f)
+        tmp = pickle.load(f)
+    return tmp
 
 
 def spearmancorr_score(x, y):
@@ -113,23 +125,67 @@ def spearmancorr_score(x, y):
 
 
 def pr_auc_score(y_true, y_scores):
-    precision, recall, _ = precision_recall_curve(y_true, y_scores)
-    return auc(recall, precision)
+    try:
+        precision, recall, _ = precision_recall_curve(y_true, y_scores)
+        return auc(recall, precision)
+    except ValueError:
+        return 0
+
+
+def roc_auc_score(y_true, y_scores):
+    try:
+        return roc_auc(y_true, y_scores)
+    except ValueError:
+        return 0
 
 
 def get_metric(dataset):
-    results = pd.DataFrame.from_records([read(name) for name in os.listdir("results/")])
-    tmp1 = results.groupby("dataset").first().reset_index()[["dataset", "metric"]]
-    tmp2 = {
-        "roc-auc": "roc_auc",
-        "rocauc": "roc_auc",
-        "pr-auc": pr_auc_score,
-        "mae": "neg_mean_absolute_error",
-        "rmse": "neg_root_mean_squared_error",
-        "spearman": spearmancorr_score,
-        "ap": "average_precision",
-    }
-    return tmp2[dict(zip(tmp1.dataset, tmp1.metric))[dataset]]
+
+    if dataset in [
+        "BBB_Martins",
+        "Bioavailability_Ma",
+        "CYP3A4_Substrate_CarbonMangels",
+        "HIA_Hou",
+        "Pgp_Broccatelli",
+        "ogbg-molbace",
+        "ogbg-molbbbp",
+        "ogbg-molclintox",
+        "ogbg-molhiv",
+        "ogbg-molsider",
+        "ogbg-moltox21",
+        "ogbg-moltoxcast"
+    ]:
+        return make_scorer(roc_auc_score), True
+    elif dataset in [
+        "CYP2C9_Substrate_CarbonMangels",
+        "CYP2C9_Veith",
+        "CYP2D6_Substrate_CarbonMangels",
+        "CYP2D6_Veith",
+        "CYP3A4_Veith",
+    ]:
+        return make_scorer(pr_auc_score), True
+    elif dataset in [
+        "Lipophilicity_AstraZeneca",
+        "Solubility_AqSolDB",
+    ]:
+        return "neg_mean_absolute_error", False
+    elif dataset in [
+        "Caco2_Wang",
+        "ogbg-molesol",
+        "ogbg-molfreesolv",
+        "ogbg-mollipo",
+    ]:
+        return "neg_root_mean_squared_error", False
+    elif dataset in [
+        "Clearance_Hepatocyte_AZ",
+        "Half_Life_Obach",
+        "VDss_Lombardo",
+    ]:
+        return make_scorer(spearmancorr_score), False
+    elif dataset in [
+        "ogbg-molmuv",
+    ]:
+        return "average_precision", True
 
 
 def get_predict_fun(dataset_name, head_model):
@@ -140,14 +196,14 @@ def get_predict_fun(dataset_name, head_model):
         return predict_classification_lin
     elif dataset_name in classification_names and head_model == "forest":
         return predict_classification_forest
-    elif dataset_name in classification_names and head_model == "rigid":
-        return predict_classification_rigid
+    elif dataset_name in classification_names and head_model == "ridge":
+        return predict_classification_ridge
     elif dataset_name in regression_names and head_model == "linear":
         return predict_regression_lin
     elif dataset_name in regression_names and head_model == "forest":
         return predict_regression_forest
-    elif dataset_name in regression_names and head_model == "rigid":
-        return predict_regression_rigid
+    elif dataset_name in regression_names and head_model == "ridge":
+        return predict_regression_ridge
 
 
 def evaluate_ogb(dataset_name, y_pred):
@@ -183,43 +239,42 @@ def evaluate(dataset_name, y_pred):
         return evaluate_ogb(dataset_name, y_pred)
 
 
-def procedure(dataset_name, base_model):
-    if os.path.isfile(f"embeddings/{dataset_name}/{base_model}.zip"):
-        _, split_idx = get_dataset(dataset_name)
+def procedure(dataset_name, base_model, head_model):
+    _, split_idx = get_dataset(dataset_name)
 
-        for head_model in [
-            # "linear",
-            "rigid",
-            "forest",
-        ]:
+    df = pd.read_pickle(f"embeddings/{dataset_name}/{base_model}.zip").drop(["features"], axis=1, errors="ignore")
 
-            df = pd.read_pickle(f"embeddings/{dataset_name}/{base_model}.zip")
+    predict_fun = get_predict_fun(dataset_name, head_model)
 
-            predict_fun = get_predict_fun(dataset_name, head_model)
+    scoring, predict_proba = get_metric(dataset_name)
 
-            preds = predict_regression_forest(df, split_idx, scoring=get_metric(dataset_name))
+    preds = predict_fun(df, split_idx, scoring=scoring, predict_proba=predict_proba)
 
-            metric_name, metric_value = evaluate(dataset_name, preds)
+    metric_name, metric_value = evaluate(dataset_name, preds)
 
-            with open(f'results/{dataset_name}_{base_model}_{head_model}.pkl', 'wb') as f:
-                data = {
-                    'dataset': dataset_name,
-                    'base_model': base_model,
-                    'head_model': head_model,
-                    'metric': metric_name,
-                    'result': metric_value
-                }
-                pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
+    data = {
+        'dataset': dataset_name,
+        'base_model': base_model,
+        'head_model': head_model,
+        'metric': metric_name,
+        'result': metric_value,
+    }
+    print(data)
+
+    with open(f'results/{dataset_name}_{base_model}_{head_model}.pkl', 'wb') as f:
+        pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
 
 
 @click.command()
 @click.option("--dataset_name", required=True, type=str)
 @click.option("--base_model", required=True, type=str)
-def main(dataset_name, base_model):
+@click.option("--head_model", required=True, type=str)
+def main(dataset_name, base_model, head_model):
     try:
-        procedure(dataset_name, base_model)
+        procedure(dataset_name, base_model, head_model)
     except Exception as e:
         print(f"Exception while executing ({dataset_name}, {base_model}):\n{e}")
+        traceback.print_exception(type(e), e, e.__traceback__)
 
 
 if __name__ == "__main__":
