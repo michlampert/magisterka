@@ -4,3 +4,6 @@
 [submodule "MAT"]
 	path = MAT
 	url = https://github.com/ardigen/MAT.git
+[submodule "MolBERT"]
+	path = MolBERT
+	url = https://github.com/BenevolentAI/MolBERT.git

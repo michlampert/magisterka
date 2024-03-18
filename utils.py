@@ -11,6 +11,7 @@ from itertools import chain
 from functools import partial
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 import torch.nn as nn
+from molbert.utils.featurizer.molbert_featurizer import MolBertFeaturizer
 
 logger = logging.getLogger("molecules")
 
@@ -90,6 +91,17 @@ def get_chemberta_embedder(config):
     
     return process
 
+def get_molbert_embedder():
+    path_to_checkpoint = './models/molbert_100epochs/molbert_100epochs/checkpoints/last.ckpt'
+    model = MolBertFeaturizer(path_to_checkpoint, device="cpu")
+    
+    def process(df):
+        with torch.no_grad():
+            tqdm.pandas()
+            df["embeddings"] = df.smiles.progress_map(lambda f: model.transform(f)[0][0])
+        
+    return process
+
 
 def get_embedder_names():
     return [
@@ -104,6 +116,7 @@ def get_embedder_names():
         "ChemBERTa-5M-MTR",
         "ChemBERTa-10M-MTR",
         "ChemBERTa-77M-MTR",
+        'molbert',
     ]
 
 
@@ -118,6 +131,8 @@ def get_embedder(name):
         return get_mol2vec_embedder()
     elif name in ["ChemBERTa-5M-MTR", "ChemBERTa-10M-MTR", "ChemBERTa-77M-MTR"]:
         return get_chemberta_embedder(name)
+    elif name in ['molbert']:
+        return get_molbert_embedder()
 
 
 if __name__ == "__main__":

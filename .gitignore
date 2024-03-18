@@ -9,3 +9,4 @@ models/
 tmp*
 results_*/
 results*.db
+threeDInfomax/
