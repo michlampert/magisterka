@@ -117,6 +117,7 @@ def get_embedder_names():
         "ChemBERTa-10M-MTR",
         "ChemBERTa-77M-MTR",
         'molbert',
+        "SELFormer",
     ]
 
 

@@ -10,3 +10,7 @@ tmp*
 results_*/
 results*.db
 threeDInfomax/
+smiles_txt/
+selfies/
+selformer_embeddings
+SELFormer
