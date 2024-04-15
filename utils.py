@@ -1,5 +1,4 @@
 import pandas as pd
-from ogb.graphproppred import PygGraphPropPredDataset
 import logging
 import time
 from models import *
@@ -12,6 +11,9 @@ from functools import partial
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 import torch.nn as nn
 from molbert.utils.featurizer.molbert_featurizer import MolBertFeaturizer
+
+from transformers.models.graphormer.collating_graphormer import preprocess_item, GraphormerDataCollator
+from transformers import GraphormerForGraphClassification
 
 logger = logging.getLogger("molecules")
 
@@ -78,28 +80,54 @@ def get_chemberta_embedder(config):
     chemberta = AutoModelForMaskedLM.from_pretrained(f"DeepChem/{config}")
     chemberta._modules["lm_head"] = nn.Identity()
     tokenizer = AutoTokenizer.from_pretrained(f"DeepChem/{config}")
-    
+
     def model(smiles):
         encoded_input = tokenizer(smiles, return_tensors="pt", padding=True, truncation=True)
         model_output = chemberta(**encoded_input)
-        return model_output[0][::,0,::]
-        
+        return model_output[0][::, 0, ::]
+
     def process(df):
         with torch.no_grad():
             tqdm.pandas()
             df["embeddings"] = df.smiles.progress_map(lambda f: model(f)[0])
-    
+
     return process
+
 
 def get_molbert_embedder():
     path_to_checkpoint = './models/molbert_100epochs/molbert_100epochs/checkpoints/last.ckpt'
     model = MolBertFeaturizer(path_to_checkpoint, device="cpu")
-    
+
     def process(df):
         with torch.no_grad():
             tqdm.pandas()
             df["embeddings"] = df.smiles.progress_map(lambda f: model.transform(f)[0][0])
-        
+
+    return process
+
+
+def get_graphormer_embedder():
+    model_checkpoint = "clefourrier/graphormer-base-pcqm4mv2"
+    model = GraphormerForGraphClassification.from_pretrained(model_checkpoint)
+    model.classifier = torch.nn.Identity()
+
+    def preprocess(molecules):
+        result = GraphormerDataCollator()([{**preprocess_item(molecule)} for molecule in molecules])
+        result["labels"] = None
+        return result
+    
+    def inner(molecule):
+        try:
+            return model.forward(**preprocess([molecule])).logits.flatten()
+        except IndexError:
+            logger.warning(f"\rInvalid molecule" + " " * 20)
+            return None
+    
+    def process(df):
+        with torch.no_grad():
+            tqdm.pandas()
+            df["embeddings"] = df.graph.progress_map(inner)
+
     return process
 
 
@@ -118,6 +146,7 @@ def get_embedder_names():
         "ChemBERTa-77M-MTR",
         'molbert',
         "SELFormer",
+        "Graphormer",
     ]
 
 
@@ -134,6 +163,8 @@ def get_embedder(name):
         return get_chemberta_embedder(name)
     elif name in ['molbert']:
         return get_molbert_embedder()
+    elif name in ['Graphormer']:
+        return get_graphormer_embedder()
 
 
 if __name__ == "__main__":

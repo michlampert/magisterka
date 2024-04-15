@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from ogb.graphproppred import PygGraphPropPredDataset
 import logging
 import time
@@ -10,16 +11,19 @@ from rdkit import Chem
 from itertools import chain
 from tdc.single_pred import ADME
 from tdc.benchmark_group import admet_group
+from tdc.chem_utils import MolConvert
+from ogb.utils import smiles2graph
 
 
-def load_ogb_dataset(name: str):
+def load_ogb_dataset(name: str, load_graphs = False):
     dataset = PygGraphPropPredDataset(name=name)
 
     smiles = pd.read_csv(f"dataset/{name.replace('-', '_')}/mapping/mol.csv.gz").drop(['mol_id'], axis=1)
+    if load_graphs: smiles["graph"] = list(dataset)
     return smiles, dataset.get_idx_split()
 
 
-def load_tdc_dataset(module, name: str):
+def load_tdc_dataset(module, name: str, load_graphs = False):
     data = module(name=name)
     split = data.get_split()
 
@@ -27,12 +31,9 @@ def load_tdc_dataset(module, name: str):
 
     dataset = pd.concat([train, valid, test]).reset_index(drop=True)
     
-    # train_range = list(range(0, len(train)))
-    # train.index = train_range
-    # valid_range = list(range(len(train), len(train) + len(valid)))
-    # valid.index = valid_range
-    # test_range = list(range(len(train) + len(valid), len(train) + len(valid) + len(test)))
-    # test.index = test_range
+    if load_graphs:
+        converter = MolConvert(src = 'SMILES', dst = 'PyG')
+        dataset["graph"] = dataset["Drug"].map(lambda smiles: {**smiles2graph(smiles), "x": converter(smiles).x, "y": np.array([[0]])})
     
     group = admet_group(path = 'data/')
     benchmark = group.get(name)
@@ -119,8 +120,8 @@ def get_dataset_names() -> Iterator:
     )
 
 
-def get_dataset(name):
+def get_dataset(name, load_graphs = False):
     if name in get_ogb_names():
-        return load_ogb_dataset(name)
+        return load_ogb_dataset(name, load_graphs)
     elif name in get_tdc_names():
-        return load_tdc_dataset(ADME, name)
+        return load_tdc_dataset(ADME, name, load_graphs)

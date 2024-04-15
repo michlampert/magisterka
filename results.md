@@ -12,8 +12,8 @@
 | BBB_Martins | mat_masking_20M   | forest       | roc-auc  |    0.879 |
 | BBB_Martins | mat_masking_2M    | forest       | roc-auc  |    0.875 |
 | BBB_Martins | mat_masking_200k  | forest       | roc-auc  |    0.874 |
-| BBB_Martins | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.864 |
 | BBB_Martins | mol2vec           | ridge        | roc-auc  |    0.864 |
+| BBB_Martins | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.864 |
 | BBB_Martins | ChemBERTa-5M-MTR  | ridge        | roc-auc  |    0.846 |
 | BBB_Martins | ChemBERTa-10M-MTR | ridge        | roc-auc  |    0.838 |
 | BBB_Martins | mat_masking_200k  | linear       | roc-auc  |    0.816 |
@@ -27,6 +27,8 @@
 | BBB_Martins | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.774 |
 | BBB_Martins | mat_masking_20M   | linear       | roc-auc  |    0.772 |
 | BBB_Martins | mat_masking_200k  | ridge        | roc-auc  |    0.757 |
+| BBB_Martins | Graphormer        | linear       | roc-auc  |    0.744 |
+| BBB_Martins | Graphormer        | forest       | roc-auc  |    0.729 |
 | BBB_Martins | rmat_4M_rdkit     | ridge        | roc-auc  |    0.712 |
 | BBB_Martins | grover_large      | forest       | roc-auc  |    0.705 |
 | BBB_Martins | grover_base       | linear       | roc-auc  |    0.692 |
@@ -57,17 +59,19 @@
 | Bioavailability_Ma | rmat_4M           | ridge        | roc-auc  |    0.673 |
 | Bioavailability_Ma | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.663 |
 | Bioavailability_Ma | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.66  |
+| Bioavailability_Ma | Graphormer        | forest       | roc-auc  |    0.653 |
 | Bioavailability_Ma | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.636 |
 | Bioavailability_Ma | SELFormer         | forest       | roc-auc  |    0.631 |
 | Bioavailability_Ma | rmat_4M           | linear       | roc-auc  |    0.627 |
 | Bioavailability_Ma | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.62  |
 | Bioavailability_Ma | rmat_4M_rdkit     | linear       | roc-auc  |    0.616 |
-| Bioavailability_Ma | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.605 |
 | Bioavailability_Ma | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.605 |
+| Bioavailability_Ma | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.605 |
 | Bioavailability_Ma | ChemBERTa-10M-MTR | ridge        | roc-auc  |    0.597 |
 | Bioavailability_Ma | mol2vec           | linear       | roc-auc  |    0.596 |
 | Bioavailability_Ma | SELFormer         | linear       | roc-auc  |    0.594 |
 | Bioavailability_Ma | mat_masking_2M    | linear       | roc-auc  |    0.593 |
+| Bioavailability_Ma | Graphormer        | linear       | roc-auc  |    0.591 |
 | Bioavailability_Ma | mat_masking_2M    | ridge        | roc-auc  |    0.589 |
 | Bioavailability_Ma | mol2vec           | ridge        | roc-auc  |    0.576 |
 | Bioavailability_Ma | mat_masking_200k  | ridge        | roc-auc  |    0.565 |
@@ -93,13 +97,14 @@
 | CYP2C9_Substrate_CarbonMangels | rmat_4M           | forest       | pr-auc   |    0.426 |
 | CYP2C9_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | pr-auc   |    0.423 |
 | CYP2C9_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.397 |
-| CYP2C9_Substrate_CarbonMangels | mat_masking_200k  | forest       | pr-auc   |    0.378 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_20M   | forest       | pr-auc   |    0.378 |
+| CYP2C9_Substrate_CarbonMangels | mat_masking_200k  | forest       | pr-auc   |    0.378 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_2M    | forest       | pr-auc   |    0.373 |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.372 |
+| CYP2C9_Substrate_CarbonMangels | Graphormer        | forest       | pr-auc   |    0.359 |
 | CYP2C9_Substrate_CarbonMangels | SELFormer         | linear       | pr-auc   |    0.359 |
-| CYP2C9_Substrate_CarbonMangels | rmat_4M           | ridge        | pr-auc   |    0.35  |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-10M-MTR | ridge        | pr-auc   |    0.35  |
+| CYP2C9_Substrate_CarbonMangels | rmat_4M           | ridge        | pr-auc   |    0.35  |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.347 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_200k  | ridge        | pr-auc   |    0.344 |
 | CYP2C9_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | ridge        | pr-auc   |    0.34  |
@@ -112,6 +117,7 @@
 | CYP2C9_Substrate_CarbonMangels | rmat_4M_rdkit     | ridge        | pr-auc   |    0.316 |
 | CYP2C9_Substrate_CarbonMangels | SELFormer         | forest       | pr-auc   |    0.308 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_20M   | ridge        | pr-auc   |    0.297 |
+| CYP2C9_Substrate_CarbonMangels | Graphormer        | linear       | pr-auc   |    0.292 |
 | CYP2C9_Substrate_CarbonMangels | mol2vec           | linear       | pr-auc   |    0.283 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_2M    | linear       | pr-auc   |    0.282 |
 | CYP2C9_Substrate_CarbonMangels | mat_masking_20M   | linear       | pr-auc   |    0.282 |
@@ -151,8 +157,8 @@
 | CYP2C9_Veith | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.582 |
 | CYP2C9_Veith | ChemBERTa-5M-MTR  | linear       | pr-auc   |    0.579 |
 | CYP2C9_Veith | rmat_4M           | linear       | pr-auc   |    0.574 |
-| CYP2C9_Veith | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.573 |
 | CYP2C9_Veith | grover_large      | ridge        | pr-auc   |    0.573 |
+| CYP2C9_Veith | ChemBERTa-10M-MTR | linear       | pr-auc   |    0.573 |
 | CYP2C9_Veith | mat_masking_2M    | linear       | pr-auc   |    0.572 |
 | CYP2C9_Veith | mat_masking_200k  | linear       | pr-auc   |    0.56  |
 | CYP2C9_Veith | rmat_4M_rdkit     | linear       | pr-auc   |    0.559 |
@@ -184,6 +190,7 @@
 | CYP2D6_Substrate_CarbonMangels | grover_large      | forest       | pr-auc   |    0.547 |
 | CYP2D6_Substrate_CarbonMangels | grover_base       | forest       | pr-auc   |    0.546 |
 | CYP2D6_Substrate_CarbonMangels | mat_masking_200k  | linear       | pr-auc   |    0.526 |
+| CYP2D6_Substrate_CarbonMangels | Graphormer        | forest       | pr-auc   |    0.521 |
 | CYP2D6_Substrate_CarbonMangels | mol2vec           | ridge        | pr-auc   |    0.515 |
 | CYP2D6_Substrate_CarbonMangels | ChemBERTa-77M-MTR | ridge        | pr-auc   |    0.502 |
 | CYP2D6_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | pr-auc   |    0.5   |
@@ -201,6 +208,7 @@
 | CYP2D6_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | ridge        | pr-auc   |    0.423 |
 | CYP2D6_Substrate_CarbonMangels | SELFormer         | linear       | pr-auc   |    0.42  |
 | CYP2D6_Substrate_CarbonMangels | grover_large      | linear       | pr-auc   |    0.407 |
+| CYP2D6_Substrate_CarbonMangels | Graphormer        | linear       | pr-auc   |    0.407 |
 | CYP2D6_Substrate_CarbonMangels | ChemBERTa-10M-MTR | ridge        | pr-auc   |    0.398 |
 | CYP2D6_Substrate_CarbonMangels | grover_base       | linear       | pr-auc   |    0.383 |
 | CYP2D6_Substrate_CarbonMangels | molbert           | forest       | pr-auc   |    0.318 |
@@ -210,8 +218,8 @@
 | dataset      | base_model        | head_model   | metric   |   result |
 |:-------------|:------------------|:-------------|:---------|---------:|
 | CYP2D6_Veith | **SOTA**          | -            | pr-auc   |    0.79  |
-| CYP2D6_Veith | rmat_4M_rdkit     | forest       | pr-auc   |    0.652 |
 | CYP2D6_Veith | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.652 |
+| CYP2D6_Veith | rmat_4M_rdkit     | forest       | pr-auc   |    0.652 |
 | CYP2D6_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.644 |
 | CYP2D6_Veith | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.634 |
 | CYP2D6_Veith | mat_masking_2M    | forest       | pr-auc   |    0.624 |
@@ -250,12 +258,12 @@
 | CYP3A4_Substrate_CarbonMangels | **SOTA**          | -            | roc-auc  |    0.667 |
 | CYP3A4_Substrate_CarbonMangels | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.656 |
 | CYP3A4_Substrate_CarbonMangels | mat_masking_200k  | forest       | roc-auc  |    0.647 |
-| CYP3A4_Substrate_CarbonMangels | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.646 |
 | CYP3A4_Substrate_CarbonMangels | mat_masking_2M    | forest       | roc-auc  |    0.646 |
+| CYP3A4_Substrate_CarbonMangels | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.646 |
 | CYP3A4_Substrate_CarbonMangels | rmat_4M           | forest       | roc-auc  |    0.643 |
 | CYP3A4_Substrate_CarbonMangels | mat_masking_20M   | forest       | roc-auc  |    0.635 |
-| CYP3A4_Substrate_CarbonMangels | mat_masking_20M   | ridge        | roc-auc  |    0.634 |
 | CYP3A4_Substrate_CarbonMangels | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.634 |
+| CYP3A4_Substrate_CarbonMangels | mat_masking_20M   | ridge        | roc-auc  |    0.634 |
 | CYP3A4_Substrate_CarbonMangels | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.631 |
 | CYP3A4_Substrate_CarbonMangels | rmat_4M_rdkit     | forest       | roc-auc  |    0.63  |
 | CYP3A4_Substrate_CarbonMangels | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.63  |
@@ -274,11 +282,13 @@
 | CYP3A4_Substrate_CarbonMangels | mol2vec           | ridge        | roc-auc  |    0.567 |
 | CYP3A4_Substrate_CarbonMangels | grover_large      | ridge        | roc-auc  |    0.565 |
 | CYP3A4_Substrate_CarbonMangels | rmat_4M           | linear       | roc-auc  |    0.564 |
+| CYP3A4_Substrate_CarbonMangels | Graphormer        | forest       | roc-auc  |    0.557 |
 | CYP3A4_Substrate_CarbonMangels | grover_base       | ridge        | roc-auc  |    0.556 |
 | CYP3A4_Substrate_CarbonMangels | rmat_4M           | ridge        | roc-auc  |    0.543 |
 | CYP3A4_Substrate_CarbonMangels | mat_masking_200k  | ridge        | roc-auc  |    0.543 |
 | CYP3A4_Substrate_CarbonMangels | rmat_4M_rdkit     | linear       | roc-auc  |    0.541 |
 | CYP3A4_Substrate_CarbonMangels | grover_large      | linear       | roc-auc  |    0.536 |
+| CYP3A4_Substrate_CarbonMangels | Graphormer        | linear       | roc-auc  |    0.522 |
 | CYP3A4_Substrate_CarbonMangels | grover_base       | forest       | roc-auc  |    0.518 |
 | CYP3A4_Substrate_CarbonMangels | molbert           | forest       | roc-auc  |    0.491 |
 | CYP3A4_Substrate_CarbonMangels | grover_large      | forest       | roc-auc  |    0.453 |
@@ -293,8 +303,8 @@
 | CYP3A4_Veith | ChemBERTa-77M-MTR | forest       | pr-auc   |    0.829 |
 | CYP3A4_Veith | mat_masking_20M   | forest       | pr-auc   |    0.826 |
 | CYP3A4_Veith | rmat_4M           | forest       | pr-auc   |    0.823 |
-| CYP3A4_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.821 |
 | CYP3A4_Veith | ChemBERTa-10M-MTR | forest       | pr-auc   |    0.821 |
+| CYP3A4_Veith | ChemBERTa-5M-MTR  | forest       | pr-auc   |    0.821 |
 | CYP3A4_Veith | mat_masking_2M    | ridge        | pr-auc   |    0.82  |
 | CYP3A4_Veith | mat_masking_2M    | forest       | pr-auc   |    0.819 |
 | CYP3A4_Veith | mat_masking_20M   | ridge        | pr-auc   |    0.816 |
@@ -352,7 +362,9 @@
 | Caco2_Wang | mat_masking_20M   | ridge        | mae      |    0.497 |
 | Caco2_Wang | SELFormer         | ridge        | mae      |    0.498 |
 | Caco2_Wang | grover_base       | ridge        | mae      |    0.5   |
+| Caco2_Wang | Graphormer        | forest       | mae      |    0.515 |
 | Caco2_Wang | grover_large      | ridge        | mae      |    0.523 |
+| Caco2_Wang | Graphormer        | ridge        | mae      |    0.549 |
 | Caco2_Wang | molbert           | ridge        | mae      |    0.591 |
 | Caco2_Wang | molbert           | forest       | mae      |    0.599 |
 | Caco2_Wang | mol2vec           | linear       | mae      |    0.611 |
@@ -361,6 +373,7 @@
 | Caco2_Wang | grover_base       | linear       | mae      |    0.788 |
 | Caco2_Wang | rmat_4M           | linear       | mae      |    0.809 |
 | Caco2_Wang | ChemBERTa-5M-MTR  | linear       | mae      |    0.914 |
+| Caco2_Wang | Graphormer        | linear       | mae      |    2.564 |
 | Caco2_Wang | SELFormer         | linear       | mae      |    4.921 |
 | Caco2_Wang | mat_masking_200k  | linear       | mae      |    5.092 |
 | Caco2_Wang | mat_masking_20M   | linear       | mae      |    6.734 |
@@ -375,8 +388,8 @@
 | Clearance_Hepatocyte_AZ | ChemBERTa-10M-MTR | forest       | spearman |    0.361 |
 | Clearance_Hepatocyte_AZ | mol2vec           | forest       | spearman |    0.356 |
 | Clearance_Hepatocyte_AZ | mat_masking_200k  | forest       | spearman |    0.298 |
-| Clearance_Hepatocyte_AZ | mol2vec           | ridge        | spearman |    0.298 |
 | Clearance_Hepatocyte_AZ | mol2vec           | linear       | spearman |    0.298 |
+| Clearance_Hepatocyte_AZ | mol2vec           | ridge        | spearman |    0.298 |
 | Clearance_Hepatocyte_AZ | ChemBERTa-5M-MTR  | forest       | spearman |    0.291 |
 | Clearance_Hepatocyte_AZ | grover_base       | linear       | spearman |    0.286 |
 | Clearance_Hepatocyte_AZ | mat_masking_2M    | forest       | spearman |    0.278 |
@@ -399,7 +412,10 @@
 | Clearance_Hepatocyte_AZ | SELFormer         | forest       | spearman |    0.123 |
 | Clearance_Hepatocyte_AZ | grover_base       | forest       | spearman |    0.084 |
 | Clearance_Hepatocyte_AZ | grover_large      | linear       | spearman |    0.083 |
+| Clearance_Hepatocyte_AZ | Graphormer        | ridge        | spearman |    0.075 |
 | Clearance_Hepatocyte_AZ | rmat_4M           | linear       | spearman |    0.073 |
+| Clearance_Hepatocyte_AZ | Graphormer        | forest       | spearman |    0.065 |
+| Clearance_Hepatocyte_AZ | Graphormer        | linear       | spearman |    0.052 |
 | Clearance_Hepatocyte_AZ | mat_masking_20M   | linear       | spearman |    0.044 |
 | Clearance_Hepatocyte_AZ | SELFormer         | ridge        | spearman |    0.016 |
 | Clearance_Hepatocyte_AZ | molbert           | forest       | spearman |   -0.008 |
@@ -418,10 +434,10 @@
 | HIA_Hou   | rmat_4M_rdkit     | forest       | roc-auc  |    0.974 |
 | HIA_Hou   | mat_masking_20M   | forest       | roc-auc  |    0.971 |
 | HIA_Hou   | rmat_4M           | forest       | roc-auc  |    0.97  |
-| HIA_Hou   | rmat_4M_rdkit     | ridge        | roc-auc  |    0.96  |
 | HIA_Hou   | mat_masking_2M    | ridge        | roc-auc  |    0.96  |
-| HIA_Hou   | mat_masking_200k  | ridge        | roc-auc  |    0.957 |
+| HIA_Hou   | rmat_4M_rdkit     | ridge        | roc-auc  |    0.96  |
 | HIA_Hou   | mat_masking_20M   | ridge        | roc-auc  |    0.957 |
+| HIA_Hou   | mat_masking_200k  | ridge        | roc-auc  |    0.957 |
 | HIA_Hou   | rmat_4M           | ridge        | roc-auc  |    0.956 |
 | HIA_Hou   | ChemBERTa-10M-MTR | forest       | roc-auc  |    0.952 |
 | HIA_Hou   | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.949 |
@@ -442,9 +458,11 @@
 | HIA_Hou   | grover_large      | forest       | roc-auc  |    0.848 |
 | HIA_Hou   | ChemBERTa-5M-MTR  | linear       | roc-auc  |    0.843 |
 | HIA_Hou   | grover_large      | ridge        | roc-auc  |    0.841 |
+| HIA_Hou   | Graphormer        | forest       | roc-auc  |    0.826 |
 | HIA_Hou   | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.817 |
 | HIA_Hou   | grover_base       | ridge        | roc-auc  |    0.781 |
 | HIA_Hou   | SELFormer         | linear       | roc-auc  |    0.756 |
+| HIA_Hou   | Graphormer        | linear       | roc-auc  |    0.706 |
 | HIA_Hou   | grover_large      | linear       | roc-auc  |    0.676 |
 | HIA_Hou   | grover_base       | linear       | roc-auc  |    0.672 |
 | HIA_Hou   | molbert           | forest       | roc-auc  |    0.569 |
@@ -461,6 +479,7 @@
 | Half_Life_Obach | rmat_4M           | forest       | spearman |    0.305 |
 | Half_Life_Obach | mat_masking_20M   | forest       | spearman |    0.29  |
 | Half_Life_Obach | ChemBERTa-10M-MTR | forest       | spearman |    0.267 |
+| Half_Life_Obach | Graphormer        | forest       | spearman |    0.24  |
 | Half_Life_Obach | ChemBERTa-77M-MTR | forest       | spearman |    0.218 |
 | Half_Life_Obach | ChemBERTa-5M-MTR  | forest       | spearman |    0.182 |
 | Half_Life_Obach | mat_masking_200k  | linear       | spearman |    0.144 |
@@ -485,12 +504,14 @@
 | Half_Life_Obach | rmat_4M           | linear       | spearman |    0.037 |
 | Half_Life_Obach | rmat_4M           | ridge        | spearman |    0.034 |
 | Half_Life_Obach | grover_large      | ridge        | spearman |    0.026 |
-| Half_Life_Obach | molbert           | forest       | spearman |    0.023 |
 | Half_Life_Obach | molbert           | ridge        | spearman |    0.023 |
+| Half_Life_Obach | molbert           | forest       | spearman |    0.023 |
 | Half_Life_Obach | SELFormer         | forest       | spearman |    0.023 |
+| Half_Life_Obach | Graphormer        | ridge        | spearman |    0.019 |
 | Half_Life_Obach | ChemBERTa-77M-MTR | linear       | spearman |    0.019 |
 | Half_Life_Obach | ChemBERTa-77M-MTR | ridge        | spearman |    0.008 |
 | Half_Life_Obach | ChemBERTa-10M-MTR | linear       | spearman |   -0.021 |
+| Half_Life_Obach | Graphormer        | linear       | spearman |   -0.027 |
 | Half_Life_Obach | ChemBERTa-10M-MTR | ridge        | spearman |   -0.036 |
 
 ### Lipophilicity_AstraZeneca (regression)
@@ -509,8 +530,8 @@
 | Lipophilicity_AstraZeneca | ChemBERTa-10M-MTR | linear       | mae      |    0.603 |
 | Lipophilicity_AstraZeneca | mat_masking_2M    | linear       | mae      |    0.604 |
 | Lipophilicity_AstraZeneca | mat_masking_200k  | linear       | mae      |    0.609 |
-| Lipophilicity_AstraZeneca | mat_masking_20M   | linear       | mae      |    0.61  |
 | Lipophilicity_AstraZeneca | ChemBERTa-5M-MTR  | ridge        | mae      |    0.61  |
+| Lipophilicity_AstraZeneca | mat_masking_20M   | linear       | mae      |    0.61  |
 | Lipophilicity_AstraZeneca | ChemBERTa-5M-MTR  | linear       | mae      |    0.619 |
 | Lipophilicity_AstraZeneca | mol2vec           | ridge        | mae      |    0.654 |
 | Lipophilicity_AstraZeneca | mol2vec           | linear       | mae      |    0.659 |
@@ -520,11 +541,13 @@
 | Lipophilicity_AstraZeneca | mol2vec           | forest       | mae      |    0.804 |
 | Lipophilicity_AstraZeneca | grover_large      | ridge        | mae      |    0.834 |
 | Lipophilicity_AstraZeneca | grover_base       | ridge        | mae      |    0.849 |
+| Lipophilicity_AstraZeneca | Graphormer        | ridge        | mae      |    0.869 |
 | Lipophilicity_AstraZeneca | SELFormer         | ridge        | mae      |    0.924 |
 | Lipophilicity_AstraZeneca | SELFormer         | linear       | mae      |    0.962 |
 | Lipophilicity_AstraZeneca | molbert           | forest       | mae      |    0.983 |
 | Lipophilicity_AstraZeneca | molbert           | ridge        | mae      |    0.987 |
 | Lipophilicity_AstraZeneca | grover_base       | linear       | mae      |    1.019 |
+| Lipophilicity_AstraZeneca | Graphormer        | linear       | mae      |    1.072 |
 | Lipophilicity_AstraZeneca | grover_large      | linear       | mae      |    1.333 |
 | Lipophilicity_AstraZeneca | rmat_4M           | linear       | mae      |    1.668 |
 | Lipophilicity_AstraZeneca | rmat_4M_rdkit     | linear       | mae      |    2.935 |
@@ -544,12 +567,14 @@
 | Pgp_Broccatelli | ChemBERTa-77M-MTR | forest       | roc-auc  |    0.891 |
 | Pgp_Broccatelli | mol2vec           | forest       | roc-auc  |    0.887 |
 | Pgp_Broccatelli | mol2vec           | ridge        | roc-auc  |    0.877 |
-| Pgp_Broccatelli | mat_masking_200k  | linear       | roc-auc  |    0.849 |
+| Pgp_Broccatelli | Graphormer        | forest       | roc-auc  |    0.868 |
 | Pgp_Broccatelli | mat_masking_2M    | linear       | roc-auc  |    0.849 |
+| Pgp_Broccatelli | mat_masking_200k  | linear       | roc-auc  |    0.849 |
 | Pgp_Broccatelli | ChemBERTa-5M-MTR  | ridge        | roc-auc  |    0.839 |
 | Pgp_Broccatelli | ChemBERTa-10M-MTR | linear       | roc-auc  |    0.833 |
 | Pgp_Broccatelli | ChemBERTa-77M-MTR | ridge        | roc-auc  |    0.825 |
 | Pgp_Broccatelli | grover_base       | forest       | roc-auc  |    0.824 |
+| Pgp_Broccatelli | Graphormer        | linear       | roc-auc  |    0.82  |
 | Pgp_Broccatelli | SELFormer         | forest       | roc-auc  |    0.819 |
 | Pgp_Broccatelli | ChemBERTa-77M-MTR | linear       | roc-auc  |    0.813 |
 | Pgp_Broccatelli | grover_large      | forest       | roc-auc  |    0.812 |
@@ -608,34 +633,37 @@
 | VDss_Lombardo | mat_masking_2M    | forest       | spearman |    0.446 |
 | VDss_Lombardo | mat_masking_20M   | forest       | spearman |    0.426 |
 | VDss_Lombardo | ChemBERTa-77M-MTR | forest       | spearman |    0.401 |
+| VDss_Lombardo | Graphormer        | forest       | spearman |    0.393 |
 | VDss_Lombardo | mol2vec           | forest       | spearman |    0.382 |
 | VDss_Lombardo | ChemBERTa-10M-MTR | forest       | spearman |    0.371 |
 | VDss_Lombardo | mat_masking_200k  | forest       | spearman |    0.345 |
-| VDss_Lombardo | ChemBERTa-10M-MTR | linear       | spearman |    0.284 |
 | VDss_Lombardo | ChemBERTa-10M-MTR | ridge        | spearman |    0.284 |
+| VDss_Lombardo | ChemBERTa-10M-MTR | linear       | spearman |    0.284 |
 | VDss_Lombardo | ChemBERTa-5M-MTR  | forest       | spearman |    0.278 |
 | VDss_Lombardo | SELFormer         | forest       | spearman |    0.182 |
 | VDss_Lombardo | ChemBERTa-77M-MTR | ridge        | spearman |    0.153 |
 | VDss_Lombardo | ChemBERTa-77M-MTR | linear       | spearman |    0.149 |
 | VDss_Lombardo | mat_masking_20M   | ridge        | spearman |    0.147 |
 | VDss_Lombardo | SELFormer         | ridge        | spearman |    0.14  |
-| VDss_Lombardo | mol2vec           | ridge        | spearman |    0.136 |
 | VDss_Lombardo | mol2vec           | linear       | spearman |    0.136 |
+| VDss_Lombardo | mol2vec           | ridge        | spearman |    0.136 |
 | VDss_Lombardo | SELFormer         | linear       | spearman |    0.117 |
 | VDss_Lombardo | mat_masking_200k  | ridge        | spearman |    0.104 |
 | VDss_Lombardo | mat_masking_20M   | linear       | spearman |    0.07  |
-| VDss_Lombardo | grover_base       | ridge        | spearman |    0.054 |
 | VDss_Lombardo | grover_base       | linear       | spearman |    0.054 |
+| VDss_Lombardo | grover_base       | ridge        | spearman |    0.054 |
+| VDss_Lombardo | Graphormer        | linear       | spearman |    0.053 |
 | VDss_Lombardo | rmat_4M           | linear       | spearman |    0.048 |
 | VDss_Lombardo | mat_masking_200k  | linear       | spearman |    0.044 |
-| VDss_Lombardo | grover_large      | ridge        | spearman |    0.044 |
 | VDss_Lombardo | rmat_4M           | ridge        | spearman |    0.044 |
+| VDss_Lombardo | grover_large      | ridge        | spearman |    0.044 |
 | VDss_Lombardo | rmat_4M_rdkit     | linear       | spearman |    0.043 |
 | VDss_Lombardo | mat_masking_2M    | linear       | spearman |    0.04  |
 | VDss_Lombardo | mat_masking_2M    | ridge        | spearman |    0.038 |
 | VDss_Lombardo | grover_large      | linear       | spearman |    0.03  |
 | VDss_Lombardo | molbert           | forest       | spearman |    0.027 |
 | VDss_Lombardo | molbert           | ridge        | spearman |    0.024 |
+| VDss_Lombardo | Graphormer        | ridge        | spearman |    0.019 |
 | VDss_Lombardo | rmat_4M_rdkit     | ridge        | spearman |    0.018 |
 | VDss_Lombardo | ChemBERTa-5M-MTR  | linear       | spearman |   -0.014 |
 | VDss_Lombardo | ChemBERTa-5M-MTR  | ridge        | spearman |   -0.015 |
@@ -900,14 +928,14 @@
 | dataset     | base_model        | head_model   | metric   |     result |
 |:------------|:------------------|:-------------|:---------|-----------:|
 | ogbg-molmuv | mol2vec           | linear       | ap       | 0.0246996  |
+| ogbg-molmuv | mat_masking_2M    | linear       | ap       | 0.00252069 |
 | ogbg-molmuv | ChemBERTa-10M-MTR | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | rmat_4M           | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | ChemBERTa-5M-MTR  | linear       | ap       | 0.00252069 |
 | ogbg-molmuv | rmat_4M_rdkit     | linear       | ap       | 0.00252069 |
 | ogbg-molmuv | mat_masking_20M   | linear       | ap       | 0.00252069 |
 | ogbg-molmuv | ChemBERTa-77M-MTR | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | ChemBERTa-5M-MTR  | linear       | ap       | 0.00252069 |
+| ogbg-molmuv | rmat_4M           | linear       | ap       | 0.00252069 |
 | ogbg-molmuv | mat_masking_200k  | linear       | ap       | 0.00252069 |
-| ogbg-molmuv | mat_masking_2M    | linear       | ap       | 0.00252069 |
 
 ### ogbg-molsider (classification)
 

@@ -30,7 +30,7 @@ import traceback
 def predict_test(df, split_idx, model, **kwargs):
     scaler = StandardScaler()
 
-    targets = list(filter(lambda col: col not in ['smiles', "features", 'embeddings', 'Drug_ID'], df.columns))
+    targets = list(filter(lambda col: col not in ['smiles', "features", 'embeddings', "graph", 'Drug_ID'], df.columns))
 
     train_val = pd.concat([df.loc[split_idx["train"]], df.loc[split_idx["valid"]]])
     train_val = train_val.fillna(train_val[targets].mode().iloc[0])
@@ -210,7 +210,7 @@ def evaluate_ogb(dataset_name, y_pred):
     evaluator = Evaluator(name=dataset_name)
 
     dataset, split_idx = get_dataset(dataset_name)
-    targets = list(filter(lambda col: col not in ['smiles', "features", 'embeddings', 'Drug_ID'], dataset.columns))
+    targets = list(filter(lambda col: col not in ['smiles', "features", 'embeddings', "graph", 'Drug_ID'], dataset.columns))
     y_true = dataset.loc[split_idx["test"]][targets].to_numpy()
 
     input_dict = {"y_true": y_true.reshape((-1, len(targets))), "y_pred": y_pred.reshape((-1, len(targets)))}

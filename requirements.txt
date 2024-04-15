@@ -17,12 +17,14 @@ colorama==0.4.6
 comm==0.2.1
 contourpy==1.2.0
 cycler==0.12.1
+Cython==3.0.10
 dataclasses==0.6
 datasets==2.18.0
 debugpy==1.8.0
 decorator==5.1.1
 deepchem==2.8.0
 descriptastorus==2.6.1
+dgl==2.1.0
 dill==0.3.8
 docker-pycreds==0.4.0
 exceptiongroup==1.2.0
@@ -90,6 +92,7 @@ pure-eval==0.2.2
 pyarrow==15.0.2
 pyarrow-hotfix==0.6
 pycodestyle==2.11.1
+pydantic==2.6.4
 pydantic_core==2.16.3
 pydeck==0.8.1b0
 pyflakes==3.2.0

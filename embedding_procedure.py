@@ -64,7 +64,8 @@ def procedure(dataset_name, df, model_name, model, *, max_samples=None):
 @click.option("--max_samples", default=None, type=int)
 def main(model_name, dataset_name, max_samples):
 
-    df, _ = get_dataset(dataset_name)
+    load_graphs = model_name in ["Graphormer"]
+    df, _ = get_dataset(dataset_name, load_graphs)
 
     model = get_embedder(model_name)
 
