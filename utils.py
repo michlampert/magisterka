@@ -14,6 +14,8 @@ from molbert.utils.featurizer.molbert_featurizer import MolBertFeaturizer
 
 from transformers.models.graphormer.collating_graphormer import preprocess_item, GraphormerDataCollator
 from transformers import GraphormerForGraphClassification
+from pretrain_gnns.chem.model import GNN_graphpred
+from pretrain_gnns.chem.loader import mol_to_graph_data_obj_simple
 
 logger = logging.getLogger("molecules")
 
@@ -130,7 +132,29 @@ def get_graphormer_embedder():
 
     return process
 
-
+def get_transformerm_embedder():
+    model = GNN_graphpred(5, 300, 1)
+    model.from_pretrained("pretrain_gnns/chem/model_gin/supervised_masking.pth")
+    model.graph_pred_linear = torch.nn.Identity()
+    model
+    
+    def inner(molecule):
+        try:
+            g = mol_to_graph_data_obj_simple(Chem.MolFromSmiles(molecule))
+            g.id = torch.tensor([0])
+            g.y = torch.tensor([0])
+            return model(g).flatten()
+        except:
+            logger.warning(f"\rInvalid molecule {molecule}" + " " * 20)
+            return None
+    
+    def process(df):
+        with torch.no_grad():
+            tqdm.pandas()
+            df["embeddings"] = df.smiles.progress_map(inner)
+    
+    return process
+            
 def get_embedder_names():
     return [
         "mat_masking_200k",
@@ -147,6 +171,7 @@ def get_embedder_names():
         'molbert',
         "SELFormer",
         "Graphormer",
+        "Transformer-M",
     ]
 
 
@@ -165,6 +190,8 @@ def get_embedder(name):
         return get_molbert_embedder()
     elif name in ['Graphormer']:
         return get_graphormer_embedder()
+    elif name in ['Transformer-M']:
+        return get_transformerm_embedder()
 
 
 if __name__ == "__main__":
